@@ -2,7 +2,7 @@
 
 A heart disease risk model and analysis built on **15 yearly CDC surveys (2011-2025, 6.7 million US adults)**, harmonised into one dataset. The model is trained on 2011-2023 and tested once on 2025, a year it never saw. It started as an audit of my 2022 version of this project, whose headline results came from a data leak.
 
-**[Try the app](#the-app)** · [Key results](#key-results) · [What 15 years show](#what-15-years-of-data-show) · [The 2022 audit](#part-1-auditing-my-2022-version) · [Reproduce](#reproduce)
+**[Try the live app](https://heart-disease-risk-mellithyy.streamlit.app)** · [Key results](#key-results) · [What 15 years show](#what-15-years-of-data-show) · [The 2022 audit](#part-1-auditing-my-2022-version) · [Reproduce](#reproduce)
 
 ![The app: answers on the left, the estimated probability compared with people of the same age and sex, and what moves the estimate](reports/figures/app.png)
 
@@ -139,6 +139,8 @@ Other 2022 issues fixed: duplicate rows were dropped (in a Yes/No survey, differ
 - **Not a diagnostic tool.** It is a portfolio project about building an honest dataset and an honest evaluation.
 
 ## The app
+
+**Live: [heart-disease-risk-mellithyy.streamlit.app](https://heart-disease-risk-mellithyy.streamlit.app)** (Streamlit Community Cloud; it may take half a minute to wake up if nobody has used it for a while).
 
 A [Streamlit](https://streamlit.io) app ([`app/streamlit_app.py`](app/streamlit_app.py)) with three tabs:
 - **Your estimate:** 22 questions (race, education and income can be skipped), the estimated probability on a scale next to the average for your age and sex, a note when it passes the screening cut-off, and what moves the estimate.
