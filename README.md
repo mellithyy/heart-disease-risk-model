@@ -19,6 +19,7 @@ Tested once on **2025**: 352,145 people the model never saw, 9.0% of whom report
 
 - **PR-AUC 0.376 is 4 times the no-skill level (0.090).** Accuracy is not used: answering "No" for everyone scores 91% and finds nobody.
 - **Weighted to the US adult population** with the survey weights, ROC-AUC is 0.872.
+- **Not a lucky year:** the model without blood pressure and cholesterol, scored on the 7 even years never used for training (2012-2024, 3.1 million people), keeps ROC-AUC between 0.842 and 0.853 ([details](#seven-more-unseen-years)).
 - **The probabilities can be trusted:** when the model says about 20%, about 18-20% of those people reported heart disease ([calibration](#the-model)).
 - **Spot checks against the raw data:** for men aged 60-64 with high blood pressure, smoking and no exercise but no other conditions, the app says 9.3% and the real rate among 634 such men is 9.3%. Add high cholesterol: 22% vs 20.1% among 826 men.
 - **Two ways to use it:** at the F1 cut-off (22.5%), 1 in 3 flags is right and half the cases are found. At the screening cut-off (9.8%), 81% of cases are found and about 1 in 4 flags is right.
@@ -78,6 +79,23 @@ Result: **6,705,004 adults x 31 columns** (6,640,287 with a known heart disease 
 | ![Precision-recall curves](reports/figures/brfss_precision_recall.png) | ![Calibration curves](reports/figures/brfss_calibration.png) |
 
 ![What the model relies on](reports/figures/brfss_importance.png)
+
+### Seven more unseen years
+
+Even years have no blood pressure or cholesterol questions, so they are never used for training. The model without those two questions can still be scored on them ([`robustness.py`](src/heart_risk/brfss/robustness.py)):
+
+| Year | People | Heart disease rate | Mean predicted | ROC-AUC | PR-AUC |
+|---|---|---|---|---|---|
+| 2012 | 471,812 | 9.3% | 9.2% | 0.853 | 0.390 |
+| 2014 | 460,539 | 9.3% | 8.7% | 0.848 | 0.378 |
+| 2016 | 482,178 | 9.4% | 8.8% | 0.847 | 0.377 |
+| 2018 | 433,466 | 9.3% | 8.9% | 0.844 | 0.378 |
+| 2020 | 398,387 | 8.6% | 8.1% | 0.847 | 0.364 |
+| 2022 | 440,111 | 9.0% | 8.7% | 0.845 | 0.368 |
+| 2024 | 452,464 | 9.4% | 9.2% | 0.842 | 0.372 |
+| 2025 (the main test) | 352,145 | 9.0% | 9.5% | 0.842 | 0.361 |
+
+The ranking quality holds in every year. The model predicts a little low in even years (8.7% against 9.3% in 2014) because it learned from odd-year answers, and the reported rate zig-zags between the two questionnaires.
 
 **Performance by group** (2025, gradient boosting, F1 cut-off):
 
@@ -143,6 +161,7 @@ python -m heart_risk.brfss.build           # harmonise and combine (about 6 minu
 python -m heart_risk.brfss.trends          # 15-year analysis and charts
 python -m heart_risk.brfss.train           # train and tune (about 12 minutes)
 python -m heart_risk.brfss.evaluate        # the one test on 2025
+python -m heart_risk.brfss.robustness      # the 7 even years never used for training
 # Part 1: the 2022 audit, on the committed 2020 data
 python -m heart_risk.audit2022.train
 python -m heart_risk.audit2022.evaluate
@@ -167,6 +186,7 @@ src/heart_risk/
         trends.py               15-year analysis (weighted, age-adjusted, odds ratios)
         model.py                features and pipelines
         train.py / evaluate.py  time-based training, the 2025 test
+        robustness.py           the even years 2012-2024 as extra unseen tests
     audit2022/                  Part 1: the 2022 version on its original data, and the leakage audit
     charts.py, metrics.py       shared chart style and metrics
 data/heart_2020_cleaned.csv.gz  the 2022 version's data (2.6 MB); CDC files are downloaded, not committed

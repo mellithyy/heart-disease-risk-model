@@ -1,0 +1,62 @@
+{
+  "model": "gb_without_bp_chol",
+  "trained_on": "odd years 2011-2023",
+  "years": {
+    "2012": {
+      "rows": 471812,
+      "prevalence": 0.0932,
+      "mean_predicted": 0.0918,
+      "roc_auc": 0.8527,
+      "pr_auc": 0.3904,
+      "weighted_roc_auc": 0.8773
+    },
+    "2014": {
+      "rows": 460539,
+      "prevalence": 0.0932,
+      "mean_predicted": 0.0874,
+      "roc_auc": 0.8479,
+      "pr_auc": 0.3782,
+      "weighted_roc_auc": 0.8736
+    },
+    "2016": {
+      "rows": 482178,
+      "prevalence": 0.0937,
+      "mean_predicted": 0.0884,
+      "roc_auc": 0.8465,
+      "pr_auc": 0.3769,
+      "weighted_roc_auc": 0.8732
+    },
+    "2018": {
+      "rows": 433466,
+      "prevalence": 0.0927,
+      "mean_predicted": 0.0889,
+      "roc_auc": 0.8444,
+      "pr_auc": 0.3781,
+      "weighted_roc_auc": 0.8608
+    },
+    "2020": {
+      "rows": 398387,
+      "prevalence": 0.0858,
+      "mean_predicted": 0.0808,
+      "roc_auc": 0.8471,
+      "pr_auc": 0.3642,
+      "weighted_roc_auc": 0.8649
+    },
+    "2022": {
+      "rows": 440111,
+      "prevalence": 0.0903,
+      "mean_predicted": 0.0868,
+      "roc_auc": 0.8449,
+      "pr_auc": 0.3677,
+      "weighted_roc_auc": 0.8665
+    },
+    "2024": {
+      "rows": 452464,
+      "prevalence": 0.0936,
+      "mean_predicted": 0.0919,
+      "roc_auc": 0.8418,
+      "pr_auc": 0.3716,
+      "weighted_roc_auc": 0.8622
+    }
+  }
+}
