@@ -202,7 +202,7 @@ tests/                          pytest checks
 
 ## History
 
-The first version (2022) was my capstone project for the Epsilon AI data science programme. Its notebooks, Flask app and recorded presentation are kept under the tag [`v2022-original`](https://github.com/mellithyy/heart-disease-diagnosis/tree/v2022-original).
+The first version (2022) was my capstone project for the Epsilon AI data science programme. Its notebooks, Flask app and recorded presentation are kept under the tag [`v2022-original`](https://github.com/mellithyy/heart-disease-risk-model/tree/v2022-original).
 
 ## Author
 

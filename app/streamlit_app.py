@@ -12,7 +12,7 @@ import pandas as pd
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO = "https://github.com/mellithyy/heart-disease-diagnosis"
+REPO = "https://github.com/mellithyy/heart-disease-risk-model"
 LINKEDIN = "https://www.linkedin.com/in/mohamed-el-lithy/"
 BLUE, ORANGE, RED, MUTED, INK2 = "#2a78d6", "#eb6834", "#e34948", "#898781", "#52514e"
 SKIP = "Prefer not to say"
