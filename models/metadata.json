@@ -1,0 +1,166 @@
+{
+  "trained_on": "2026-09-24",
+  "app_model": "gradient_boosting",
+  "features": [
+    "Smoking",
+    "AlcoholDrinking",
+    "Stroke",
+    "DiffWalking",
+    "PhysicalActivity",
+    "Asthma",
+    "KidneyDisease",
+    "SkinCancer",
+    "Sex",
+    "AgeCategory",
+    "GenHealth",
+    "Race",
+    "Diabetic",
+    "BMI",
+    "PhysicalHealth",
+    "MentalHealth",
+    "SleepTime"
+  ],
+  "train_rows": 255836,
+  "test_rows": 63959,
+  "prevalence_train": 0.0856,
+  "thresholds": {
+    "logistic_regression": {
+      "best_f1": 0.1786,
+      "screening_recall_80": 0.081
+    },
+    "gradient_boosting": {
+      "best_f1": 0.2066,
+      "screening_recall_80": 0.0875
+    }
+  },
+  "cross_validation": {
+    "logistic_regression": {
+      "cv_best_f1": {
+        "threshold": 0.1786,
+        "roc_auc": 0.8416,
+        "pr_auc": 0.3463,
+        "brier": 0.0657,
+        "f1": 0.397,
+        "precision": 0.3201,
+        "recall": 0.5226,
+        "accuracy": 0.8641,
+        "confusion": {
+          "tn": 209630,
+          "fp": 24308,
+          "fn": 10455,
+          "tp": 11443
+        }
+      },
+      "cv_screening": {
+        "threshold": 0.081,
+        "roc_auc": 0.8416,
+        "pr_auc": 0.3463,
+        "brier": 0.0657,
+        "f1": 0.3427,
+        "precision": 0.218,
+        "recall": 0.8,
+        "accuracy": 0.7373,
+        "confusion": {
+          "tn": 171102,
+          "fp": 62836,
+          "fn": 4379,
+          "tp": 17519
+        }
+      }
+    },
+    "gradient_boosting": {
+      "cv_best_f1": {
+        "threshold": 0.2066,
+        "roc_auc": 0.8445,
+        "pr_auc": 0.349,
+        "brier": 0.0653,
+        "f1": 0.4019,
+        "precision": 0.3345,
+        "recall": 0.5032,
+        "accuracy": 0.8718,
+        "confusion": {
+          "tn": 212015,
+          "fp": 21923,
+          "fn": 10878,
+          "tp": 11020
+        }
+      },
+      "cv_screening": {
+        "threshold": 0.0875,
+        "roc_auc": 0.8445,
+        "pr_auc": 0.349,
+        "brier": 0.0653,
+        "f1": 0.3454,
+        "precision": 0.2202,
+        "recall": 0.8,
+        "accuracy": 0.7405,
+        "confusion": {
+          "tn": 171915,
+          "fp": 62023,
+          "fn": 4379,
+          "tp": 17519
+        }
+      }
+    }
+  },
+  "rates_by_age_sex": {
+    "18-24": {
+      "Female": 0.0056,
+      "Male": 0.0069
+    },
+    "25-29": {
+      "Female": 0.0086,
+      "Male": 0.0071
+    },
+    "30-34": {
+      "Female": 0.011,
+      "Male": 0.0129
+    },
+    "35-39": {
+      "Female": 0.0132,
+      "Male": 0.0149
+    },
+    "40-44": {
+      "Female": 0.0214,
+      "Male": 0.0244
+    },
+    "45-49": {
+      "Female": 0.0284,
+      "Male": 0.0422
+    },
+    "50-54": {
+      "Female": 0.0428,
+      "Male": 0.0655
+    },
+    "55-59": {
+      "Female": 0.0584,
+      "Male": 0.091
+    },
+    "60-64": {
+      "Female": 0.0704,
+      "Male": 0.129
+    },
+    "65-69": {
+      "Female": 0.0801,
+      "Male": 0.1654
+    },
+    "70-74": {
+      "Female": 0.1075,
+      "Male": 0.2178
+    },
+    "75-79": {
+      "Female": 0.1349,
+      "Male": 0.2601
+    },
+    "80 or older": {
+      "Female": 0.179,
+      "Male": 0.2964
+    }
+  },
+  "versions": {
+    "python": "3.14.6",
+    "scikit-learn": "1.9.0",
+    "pandas": "3.0.5",
+    "numpy": "2.5.3"
+  }
+}
