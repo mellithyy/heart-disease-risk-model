@@ -1,0 +1,451 @@
+year,variable,raw_column,rows,missing_pct,answers
+2011,state,_STATE,506467,0.0,
+2011,weight,_LLCPWT,506467,0.0,
+2011,heart_attack,CVDINFR4,506467,0.5,No: 94.0%; Yes: 6.0%
+2011,coronary_heart_disease,CVDCRHD4,506467,0.9,No: 94.0%; Yes: 6.0%
+2011,stroke,CVDSTRK3,506467,0.3,No: 95.9%; Yes: 4.1%
+2011,high_blood_pressure,BPHIGH4,506467,0.3,No: 58.2%; Yes: 39.9%; Borderline: 1.2%; Pregnancy only: 0.7%
+2011,high_cholesterol,TOLDHI2,506467,2.7,No: 49.5%; Yes: 38.1%; Never checked: 12.4%
+2011,diabetes,DIABETE3,506467,0.4,No: 85.0%; Yes: 12.4%; Borderline: 1.6%; Pregnancy only: 1.0%
+2011,smoked_100,SMOKE100,506467,0.5,No: 53.8%; Yes: 46.2%
+2011,heavy_drinker,_RFDRHV4,506467,7.3,No: 94.3%; Yes: 5.7%
+2011,exercise,EXERANY2,506467,4.5,Yes: 73.0%; No: 27.0%
+2011,bmi,_BMI5,506467,5.5,"median 26.6, min 12.0, max 97.7"
+2011,sleep_hours,not asked,506467,100.0,
+2011,age_group,_AGEG5YR,506467,1.0,60-64: 11.3%; 55-59: 11.0%; 50-54: 10.1%; 65-69: 9.5%; 80 or older: 8.4%; 45-49: 8.2%; 70-74: 7.8%; 40-44: 7.0%; 75-79: 6.3%; 35-39: 6.0%; 30-34: 5.5%; 18-24: 4.6%; 25-29: 4.4%
+2011,sex,SEX,506467,0.0,Female: 60.7%; Male: 39.3%
+2011,race,_IMPRACE,506467,0.0,White: 78.2%; Black: 8.1%; Hispanic: 7.7%; Other: 2.7%; Asian: 1.9%; American Indian/Alaska Native: 1.4%
+2011,gen_health,GENHLTH,506467,0.4,Very good: 31.9%; Good: 30.9%; Excellent: 17.6%; Fair: 13.8%; Poor: 5.8%
+2011,phys_days,PHYSHLTH,506467,2.4,"median 0.0, min 0.0, max 30.0"
+2011,ment_days,MENTHLTH,506467,1.9,"median 0.0, min 0.0, max 30.0"
+2011,diff_walking,not asked,506467,100.0,
+2011,asthma,ASTHMA3,506467,0.3,No: 87.1%; Yes: 12.9%
+2011,kidney_disease,CHCKIDNY,506467,0.6,No: 96.9%; Yes: 3.1%
+2011,copd,CHCCOPD,506467,0.8,No: 92.2%; Yes: 7.8%
+2011,depression,ADDEPEV2,506467,0.7,No: 81.9%; Yes: 18.1%
+2011,arthritis,HAVARTH3,506467,0.9,No: 66.4%; Yes: 33.6%
+2011,income,INCOME2,506467,14.5,75k+: 26.4%; 50-75k: 15.6%; 35-50k: 14.9%; 25-35k: 12.0%; 20-25k: 10.1%; 15-20k: 8.3%; 10-15k: 6.6%; <10k: 6.2%
+2011,education,EDUCA,506467,0.4,College graduate: 34.2%; High school: 29.6%; Some college: 27.0%; Less than high school: 9.2%
+2011,last_checkup,CHECKUP1,506467,1.3,Within 1 year: 72.4%; 1-2 years: 12.1%; 2-5 years: 7.3%; 5+ years: 7.2%; Never: 1.0%
+2011,cost_barrier,MEDCOST,506467,0.3,No: 87.3%; Yes: 12.7%
+2011,heart_disease,derived,506467,0.9,No: 90.9%; Yes: 9.1%
+2012,state,_STATE,475687,0.0,
+2012,weight,_LLCPWT,475687,0.0,
+2012,heart_attack,CVDINFR4,475687,0.4,No: 93.9%; Yes: 6.1%
+2012,coronary_heart_disease,CVDCRHD4,475687,0.8,No: 93.8%; Yes: 6.2%
+2012,stroke,CVDSTRK3,475687,0.3,No: 95.9%; Yes: 4.1%
+2012,high_blood_pressure,not asked,475687,100.0,
+2012,high_cholesterol,not asked,475687,100.0,
+2012,diabetes,DIABETE3,475687,0.2,No: 84.9%; Yes: 12.6%; Borderline: 1.6%; Pregnancy only: 0.9%
+2012,smoked_100,SMOKE100,475687,2.0,No: 54.6%; Yes: 45.4%
+2012,heavy_drinker,_RFDRHV4,475687,4.0,No: 94.6%; Yes: 5.4%
+2012,exercise,EXERANY2,475687,0.3,Yes: 75.0%; No: 25.0%
+2012,bmi,_BMI5,475687,5.4,"median 26.6, min 12.0, max 98.9"
+2012,sleep_hours,not asked,475687,100.0,
+2012,age_group,_AGEG5YR,475687,1.0,60-64: 11.1%; 55-59: 10.7%; 65-69: 10.0%; 50-54: 9.9%; 80 or older: 8.4%; 70-74: 7.9%; 45-49: 7.8%; 40-44: 6.8%; 75-79: 6.1%; 35-39: 5.9%; 30-34: 5.6%; 18-24: 5.3%; 25-29: 4.6%
+2012,sex,SEX,475687,0.0,Female: 59.7%; Male: 40.3%
+2012,race,_IMPRACE,475687,0.0,White: 77.5%; Black: 8.5%; Hispanic: 7.6%; Other: 3.0%; Asian: 2.0%; American Indian/Alaska Native: 1.5%
+2012,gen_health,GENHLTH,475687,0.3,Very good: 32.1%; Good: 30.6%; Excellent: 17.7%; Fair: 13.8%; Poor: 5.9%
+2012,phys_days,PHYSHLTH,475687,2.1,"median 0.0, min 0.0, max 30.0"
+2012,ment_days,MENTHLTH,475687,1.7,"median 0.0, min 0.0, max 30.0"
+2012,diff_walking,not asked,475687,100.0,
+2012,asthma,ASTHMA3,475687,0.3,No: 87.2%; Yes: 12.8%
+2012,kidney_disease,CHCKIDNY,475687,0.3,No: 96.7%; Yes: 3.3%
+2012,copd,CHCCOPD1,475687,0.5,No: 92.0%; Yes: 8.0%
+2012,depression,ADDEPEV2,475687,0.4,No: 81.5%; Yes: 18.5%
+2012,arthritis,HAVARTH3,475687,0.5,No: 65.6%; Yes: 34.4%
+2012,income,INCOME2,475687,14.0,75k+: 27.3%; 50-75k: 15.6%; 35-50k: 14.6%; 25-35k: 11.6%; 20-25k: 9.9%; 15-20k: 8.3%; 10-15k: 6.5%; <10k: 6.2%
+2012,education,EDUCA,475687,0.4,College graduate: 34.5%; High school: 29.4%; Some college: 27.1%; Less than high school: 8.9%
+2012,last_checkup,CHECKUP1,475687,1.3,Within 1 year: 72.8%; 1-2 years: 12.0%; 2-5 years: 7.2%; 5+ years: 7.1%; Never: 1.0%
+2012,cost_barrier,MEDCOST,475687,0.3,No: 87.5%; Yes: 12.5%
+2012,heart_disease,derived,475687,0.8,No: 90.7%; Yes: 9.3%
+2013,state,_STATE,491773,0.0,
+2013,weight,_LLCPWT,491773,0.0,
+2013,heart_attack,CVDINFR4,491773,0.5,No: 94.0%; Yes: 6.0%
+2013,coronary_heart_disease,CVDCRHD4,491773,0.9,No: 94.0%; Yes: 6.0%
+2013,stroke,CVDSTRK3,491773,0.3,No: 95.8%; Yes: 4.2%
+2013,high_blood_pressure,BPHIGH4,491773,0.3,No: 57.7%; Yes: 40.6%; Borderline: 1.0%; Pregnancy only: 0.7%
+2013,high_cholesterol,TOLDHI2,491773,2.6,No: 49.4%; Yes: 38.3%; Never checked: 12.3%
+2013,diabetes,DIABETE3,491773,0.2,No: 84.6%; Yes: 12.7%; Borderline: 1.8%; Pregnancy only: 0.9%
+2013,smoked_100,SMOKE100,491773,3.0,No: 54.9%; Yes: 45.1%
+2013,heavy_drinker,_RFDRHV4,491773,4.9,No: 94.5%; Yes: 5.5%
+2013,exercise,EXERANY2,491773,6.9,Yes: 72.6%; No: 27.4%
+2013,bmi,_BMI5,491773,5.4,"median 26.6, min 12.0, max 97.7"
+2013,sleep_hours,SLEPTIM1,491773,1.5,"median 7.0, min 1.0, max 24.0"
+2013,age_group,_AGEG5YR,491773,1.0,60-64: 11.0%; 55-59: 10.8%; 65-69: 10.3%; 50-54: 9.7%; 80 or older: 8.3%; 70-74: 8.2%; 45-49: 7.4%; 40-44: 6.5%; 75-79: 6.2%; 35-39: 5.8%; 30-34: 5.6%; 18-24: 5.6%; 25-29: 4.7%
+2013,sex,SEX,491773,0.0,Female: 59.1%; Male: 40.9%
+2013,race,_IMPRACE,491773,0.0,White: 78.0%; Black: 8.1%; Hispanic: 7.6%; Other: 2.8%; Asian: 2.0%; American Indian/Alaska Native: 1.6%
+2013,gen_health,GENHLTH,491773,0.4,Very good: 32.5%; Good: 30.7%; Excellent: 17.5%; Fair: 13.6%; Poor: 5.7%
+2013,phys_days,PHYSHLTH,491773,2.2,"median 0.0, min 0.0, max 30.0"
+2013,ment_days,MENTHLTH,491773,1.8,"median 0.0, min 0.0, max 30.0"
+2013,diff_walking,DIFFWALK,491773,2.6,No: 81.9%; Yes: 18.1%
+2013,asthma,ASTHMA3,491773,0.3,No: 86.3%; Yes: 13.7%
+2013,kidney_disease,CHCKIDNY,491773,0.3,No: 96.8%; Yes: 3.2%
+2013,copd,CHCCOPD1,491773,0.6,No: 91.7%; Yes: 8.3%
+2013,depression,ADDEPEV2,491773,0.5,No: 80.4%; Yes: 19.6%
+2013,arthritis,HAVARTH3,491773,0.6,No: 66.2%; Yes: 33.8%
+2013,income,INCOME2,491773,14.5,75k+: 27.6%; 50-75k: 15.5%; 35-50k: 14.6%; 25-35k: 11.6%; 20-25k: 9.9%; 15-20k: 8.3%; 10-15k: 6.4%; <10k: 6.0%
+2013,education,EDUCA,491773,0.5,College graduate: 34.8%; High school: 29.2%; Some college: 27.4%; Less than high school: 8.6%
+2013,last_checkup,CHECKUP1,491773,1.3,Within 1 year: 73.4%; 1-2 years: 11.8%; 5+ years: 6.9%; 2-5 years: 6.9%; Never: 0.9%
+2013,cost_barrier,MEDCOST,491773,0.2,No: 87.7%; Yes: 12.3%
+2013,heart_disease,derived,491773,0.9,No: 90.9%; Yes: 9.1%
+2014,state,_STATE,464664,0.0,
+2014,weight,_LLCPWT,464664,0.0,
+2014,heart_attack,CVDINFR4,464664,0.5,No: 94.0%; Yes: 6.0%
+2014,coronary_heart_disease,CVDCRHD4,464664,0.9,No: 93.8%; Yes: 6.2%
+2014,stroke,CVDSTRK3,464664,0.3,No: 95.9%; Yes: 4.1%
+2014,high_blood_pressure,not asked,464664,100.0,
+2014,high_cholesterol,not asked,464664,100.0,
+2014,diabetes,DIABETE3,464664,0.2,No: 84.3%; Yes: 13.2%; Borderline: 1.7%; Pregnancy only: 0.9%
+2014,smoked_100,SMOKE100,464664,4.5,No: 56.0%; Yes: 44.0%
+2014,heavy_drinker,_RFDRHV4,464664,6.4,No: 94.6%; Yes: 5.4%
+2014,exercise,EXERANY2,464664,0.4,Yes: 75.6%; No: 24.4%
+2014,bmi,_BMI5,464664,6.6,"median 26.9, min 12.0, max 99.6"
+2014,sleep_hours,SLEPTIM1,464664,1.4,"median 7.0, min 1.0, max 24.0"
+2014,age_group,_AGEG5YR,464664,1.2,60-64: 11.5%; 65-69: 11.0%; 55-59: 10.8%; 50-54: 9.5%; 70-74: 8.8%; 80 or older: 8.5%; 45-49: 7.1%; 75-79: 6.4%; 40-44: 6.2%; 35-39: 5.5%; 18-24: 5.3%; 30-34: 5.2%; 25-29: 4.3%
+2014,sex,SEX,464664,0.0,Female: 58.5%; Male: 41.5%
+2014,race,_IMPRACE,464664,0.0,White: 78.3%; Hispanic: 7.7%; Black: 7.6%; Other: 2.8%; Asian: 2.0%; American Indian/Alaska Native: 1.5%
+2014,gen_health,GENHLTH,464664,0.4,Very good: 32.8%; Good: 30.8%; Excellent: 17.7%; Fair: 13.4%; Poor: 5.4%
+2014,phys_days,PHYSHLTH,464664,2.2,"median 0.0, min 0.0, max 30.0"
+2014,ment_days,MENTHLTH,464664,1.7,"median 0.0, min 0.0, max 30.0"
+2014,diff_walking,DIFFWALK,464664,4.1,No: 82.2%; Yes: 17.8%
+2014,asthma,ASTHMA3,464664,0.3,No: 86.7%; Yes: 13.3%
+2014,kidney_disease,CHCKIDNY,464664,0.4,No: 96.5%; Yes: 3.5%
+2014,copd,CHCCOPD1,464664,0.5,No: 91.7%; Yes: 8.3%
+2014,depression,ADDEPEV2,464664,0.5,No: 80.9%; Yes: 19.1%
+2014,arthritis,HAVARTH3,464664,0.5,No: 65.0%; Yes: 35.0%
+2014,income,INCOME2,464664,15.4,75k+: 29.8%; 50-75k: 15.8%; 35-50k: 14.6%; 25-35k: 11.3%; 20-25k: 9.5%; 15-20k: 7.8%; 10-15k: 5.8%; <10k: 5.4%
+2014,education,EDUCA,464664,0.8,College graduate: 36.2%; High school: 28.5%; Some college: 27.3%; Less than high school: 8.0%
+2014,last_checkup,CHECKUP1,464664,1.4,Within 1 year: 74.3%; 1-2 years: 11.7%; 2-5 years: 6.7%; 5+ years: 6.4%; Never: 0.9%
+2014,cost_barrier,MEDCOST,464664,0.3,No: 89.4%; Yes: 10.6%
+2014,heart_disease,derived,464664,0.9,No: 90.7%; Yes: 9.3%
+2015,state,_STATE,441456,0.0,
+2015,weight,_LLCPWT,441456,0.0,
+2015,heart_attack,CVDINFR4,441456,0.5,No: 94.2%; Yes: 5.8%
+2015,coronary_heart_disease,CVDCRHD4,441456,0.9,No: 94.2%; Yes: 5.8%
+2015,stroke,CVDSTRK3,441456,0.3,No: 95.8%; Yes: 4.2%
+2015,high_blood_pressure,BPHIGH4,441456,0.3,No: 57.8%; Yes: 40.5%; Borderline: 1.0%; Pregnancy only: 0.7%
+2015,high_cholesterol,TOLDHI2,441456,3.0,No: 51.1%; Yes: 37.3%; Never checked: 11.6%
+2015,diabetes,DIABETE3,441456,0.2,No: 84.4%; Yes: 13.0%; Borderline: 1.7%; Pregnancy only: 0.8%
+2015,smoked_100,SMOKE100,441456,4.0,No: 56.5%; Yes: 43.5%
+2015,heavy_drinker,_RFDRHV5,441456,5.8,No: 94.7%; Yes: 5.3%
+2015,exercise,EXERANY2,441456,8.6,Yes: 73.4%; No: 26.6%
+2015,bmi,_BMI5,441456,8.2,"median 26.9, min 12.0, max 100.0"
+2015,sleep_hours,not asked,441456,100.0,
+2015,age_group,_AGEG5YR,441456,1.2,60-64: 11.4%; 65-69: 11.3%; 55-59: 10.6%; 50-54: 9.1%; 70-74: 8.8%; 80 or older: 8.4%; 45-49: 6.9%; 75-79: 6.5%; 40-44: 5.9%; 35-39: 5.6%; 18-24: 5.5%; 30-34: 5.3%; 25-29: 4.5%
+2015,sex,SEX,441456,0.0,Female: 57.7%; Male: 42.3%
+2015,race,_RACE,441456,1.7,White: 77.4%; Hispanic: 8.2%; Black: 7.9%; Other: 2.7%; Asian: 2.2%; American Indian/Alaska Native: 1.5%
+2015,gen_health,GENHLTH,441456,0.3,Very good: 33.0%; Good: 31.1%; Excellent: 17.3%; Fair: 13.4%; Poor: 5.3%
+2015,phys_days,PHYSHLTH,441456,2.2,"median 0.0, min 0.0, max 30.0"
+2015,ment_days,MENTHLTH,441456,1.7,"median 0.0, min 0.0, max 30.0"
+2015,diff_walking,DIFFWALK,441456,3.3,No: 82.5%; Yes: 17.5%
+2015,asthma,ASTHMA3,441456,0.3,No: 86.5%; Yes: 13.5%
+2015,kidney_disease,CHCKIDNY,441456,0.4,No: 96.4%; Yes: 3.6%
+2015,copd,CHCCOPD1,441456,0.5,No: 91.9%; Yes: 8.1%
+2015,depression,ADDEPEV2,441456,0.5,No: 80.9%; Yes: 19.1%
+2015,arthritis,HAVARTH3,441456,0.6,No: 66.3%; Yes: 33.7%
+2015,income,INCOME2,441456,18.0,75k+: 31.9%; 50-75k: 16.1%; 35-50k: 14.4%; 25-35k: 10.8%; 20-25k: 8.9%; 15-20k: 7.4%; 10-15k: 5.4%; <10k: 5.1%
+2015,education,EDUCA,441456,0.4,College graduate: 36.8%; High school: 28.0%; Some college: 27.4%; Less than high school: 7.8%
+2015,last_checkup,CHECKUP1,441456,1.4,Within 1 year: 74.8%; 1-2 years: 11.6%; 2-5 years: 6.6%; 5+ years: 6.2%; Never: 0.9%
+2015,cost_barrier,MEDCOST,441456,0.3,No: 90.1%; Yes: 9.9%
+2015,heart_disease,derived,441456,0.9,No: 91.2%; Yes: 8.8%
+2016,state,_STATE,486303,0.0,
+2016,weight,_LLCPWT,486303,0.0,
+2016,heart_attack,CVDINFR4,486303,0.5,No: 93.9%; Yes: 6.1%
+2016,coronary_heart_disease,CVDCRHD4,486303,0.8,No: 93.8%; Yes: 6.2%
+2016,stroke,CVDSTRK3,486303,0.3,No: 95.7%; Yes: 4.3%
+2016,high_blood_pressure,not asked,486303,100.0,
+2016,high_cholesterol,not asked,486303,100.0,
+2016,diabetes,DIABETE3,486303,0.2,No: 83.8%; Yes: 13.6%; Borderline: 1.8%; Pregnancy only: 0.8%
+2016,smoked_100,SMOKE100,486303,4.0,No: 56.3%; Yes: 43.7%
+2016,heavy_drinker,_RFDRHV5,486303,6.0,No: 94.1%; Yes: 5.9%
+2016,exercise,EXERANY2,486303,0.2,Yes: 74.5%; No: 25.5%
+2016,bmi,_BMI5,486303,8.1,"median 27.1, min 12.0, max 99.6"
+2016,sleep_hours,SLEPTIM1,486303,1.2,"median 7.0, min 1.0, max 24.0"
+2016,age_group,_AGEG5YR,486303,1.4,65-69: 11.6%; 60-64: 11.4%; 55-59: 10.4%; 70-74: 9.1%; 50-54: 8.7%; 80 or older: 8.3%; 45-49: 6.9%; 75-79: 6.6%; 40-44: 5.7%; 35-39: 5.7%; 18-24: 5.6%; 30-34: 5.3%; 25-29: 4.8%
+2016,sex,SEX,486303,0.0,Female: 56.7%; Male: 43.3%
+2016,race,_RACE,486303,1.8,White: 77.1%; Black: 8.3%; Hispanic: 8.2%; Other: 2.7%; Asian: 2.2%; American Indian/Alaska Native: 1.5%
+2016,gen_health,GENHLTH,486303,0.3,Very good: 32.6%; Good: 31.3%; Excellent: 17.1%; Fair: 13.7%; Poor: 5.4%
+2016,phys_days,PHYSHLTH,486303,2.1,"median 0.0, min 0.0, max 30.0"
+2016,ment_days,MENTHLTH,486303,1.6,"median 0.0, min 0.0, max 30.0"
+2016,diff_walking,DIFFWALK,486303,3.4,No: 82.6%; Yes: 17.4%
+2016,asthma,ASTHMA3,486303,0.3,No: 86.5%; Yes: 13.5%
+2016,kidney_disease,CHCKIDNY,486303,0.3,No: 96.2%; Yes: 3.8%
+2016,copd,CHCCOPD1,486303,0.5,No: 91.6%; Yes: 8.4%
+2016,depression,ADDEPEV2,486303,0.4,No: 82.4%; Yes: 17.6%
+2016,arthritis,HAVARTH3,486303,0.5,No: 64.9%; Yes: 35.1%
+2016,income,INCOME2,486303,16.7,75k+: 31.4%; 50-75k: 16.0%; 35-50k: 14.4%; 25-35k: 10.9%; 20-25k: 9.4%; 15-20k: 7.6%; 10-15k: 5.4%; <10k: 4.9%
+2016,education,EDUCA,486303,0.4,College graduate: 36.5%; High school: 28.2%; Some college: 27.5%; Less than high school: 7.8%
+2016,last_checkup,CHECKUP1,486303,1.3,Within 1 year: 76.0%; 1-2 years: 11.1%; 2-5 years: 6.1%; 5+ years: 6.0%; Never: 0.8%
+2016,cost_barrier,MEDCOST,486303,0.3,No: 89.8%; Yes: 10.2%
+2016,heart_disease,derived,486303,0.8,No: 90.6%; Yes: 9.4%
+2017,state,_STATE,450016,0.0,
+2017,weight,_LLCPWT,450016,0.0,
+2017,heart_attack,CVDINFR4,450016,0.5,No: 94.2%; Yes: 5.8%
+2017,coronary_heart_disease,CVDCRHD4,450016,0.9,No: 94.3%; Yes: 5.7%
+2017,stroke,CVDSTRK3,450016,0.3,No: 95.8%; Yes: 4.2%
+2017,high_blood_pressure,BPHIGH4,450016,0.3,No: 58.0%; Yes: 40.4%; Borderline: 0.9%; Pregnancy only: 0.7%
+2017,high_cholesterol,TOLDHI2,450016,1.2,No: 58.3%; Yes: 35.7%; Never checked: 6.0%
+2017,diabetes,DIABETE3,450016,0.2,No: 84.0%; Yes: 13.5%; Borderline: 1.8%; Pregnancy only: 0.7%
+2017,smoked_100,SMOKE100,450016,4.1,No: 57.0%; Yes: 43.0%
+2017,heavy_drinker,_RFDRHV5,450016,6.7,No: 94.2%; Yes: 5.8%
+2017,exercise,EXERANY2,450016,7.6,Yes: 72.4%; No: 27.6%
+2017,bmi,_BMI5,450016,8.1,"median 27.2, min 12.0, max 99.3"
+2017,sleep_hours,SLEPTIM1,450016,89.0,"median 7.0, min 1.0, max 24.0"
+2017,age_group,_AGEG5YR,450016,1.4,65-69: 11.3%; 60-64: 11.3%; 55-59: 10.2%; 70-74: 9.3%; 50-54: 8.4%; 80 or older: 8.1%; 45-49: 6.8%; 75-79: 6.6%; 35-39: 5.9%; 18-24: 5.9%; 40-44: 5.7%; 30-34: 5.6%; 25-29: 5.0%
+2017,sex,SEX,450016,0.1,Female: 55.8%; Male: 44.2%
+2017,race,_IMPRACE,450016,0.0,White: 76.6%; Hispanic: 8.3%; Black: 8.0%; Other: 3.0%; Asian: 2.2%; American Indian/Alaska Native: 1.9%
+2017,gen_health,GENHLTH,450016,0.3,Very good: 32.4%; Good: 31.7%; Excellent: 16.6%; Fair: 13.9%; Poor: 5.4%
+2017,phys_days,PHYSHLTH,450016,2.1,"median 0.0, min 0.0, max 30.0"
+2017,ment_days,MENTHLTH,450016,1.6,"median 0.0, min 0.0, max 30.0"
+2017,diff_walking,DIFFWALK,450016,3.5,No: 82.4%; Yes: 17.6%
+2017,asthma,ASTHMA3,450016,0.3,No: 86.1%; Yes: 13.9%
+2017,kidney_disease,CHCKIDNY,450016,0.4,No: 96.1%; Yes: 3.9%
+2017,copd,CHCCOPD1,450016,0.5,No: 91.6%; Yes: 8.4%
+2017,depression,ADDEPEV2,450016,0.5,No: 80.1%; Yes: 19.9%
+2017,arthritis,HAVARTH3,450016,0.6,No: 67.1%; Yes: 32.9%
+2017,income,INCOME2,450016,16.7,75k+: 32.7%; 50-75k: 15.9%; 35-50k: 14.2%; 25-35k: 10.6%; 20-25k: 9.1%; 15-20k: 7.4%; 10-15k: 5.2%; <10k: 4.9%
+2017,education,EDUCA,450016,0.4,College graduate: 37.6%; Some college: 27.8%; High school: 27.3%; Less than high school: 7.3%
+2017,last_checkup,CHECKUP1,450016,1.3,Within 1 year: 74.7%; 1-2 years: 11.4%; 2-5 years: 6.7%; 5+ years: 6.3%; Never: 0.9%
+2017,cost_barrier,MEDCOST,450016,0.3,No: 89.4%; Yes: 10.6%
+2017,heart_disease,derived,450016,0.9,No: 91.2%; Yes: 8.8%
+2018,state,_STATE,437436,0.0,
+2018,weight,_LLCPWT,437436,0.0,
+2018,heart_attack,CVDINFR4,437436,0.5,No: 93.9%; Yes: 6.1%
+2018,coronary_heart_disease,CVDCRHD4,437436,0.8,No: 94.0%; Yes: 6.0%
+2018,stroke,CVDSTRK3,437436,0.3,No: 95.6%; Yes: 4.4%
+2018,high_blood_pressure,not asked,437436,100.0,
+2018,high_cholesterol,not asked,437436,100.0,
+2018,diabetes,DIABETE3,437436,0.2,No: 83.3%; Yes: 13.9%; Borderline: 1.9%; Pregnancy only: 0.9%
+2018,smoked_100,SMOKE100,437436,3.8,No: 57.1%; Yes: 42.9%
+2018,heavy_drinker,_RFDRHV6,437436,6.2,No: 93.9%; Yes: 6.1%
+2018,exercise,EXERANY2,437436,0.2,Yes: 74.8%; No: 25.2%
+2018,bmi,_BMI5,437436,8.1,"median 27.3, min 12.1, max 98.7"
+2018,sleep_hours,SLEPTIM1,437436,1.2,"median 7.0, min 1.0, max 24.0"
+2018,age_group,_AGEG5YR,437436,1.9,65-69: 11.0%; 60-64: 11.0%; 55-59: 9.8%; 70-74: 9.5%; 50-54: 8.2%; 80 or older: 8.1%; 45-49: 6.7%; 75-79: 6.7%; 35-39: 6.1%; 18-24: 6.1%; 40-44: 6.0%; 30-34: 5.7%; 25-29: 5.2%
+2018,sex,SEX1,437436,0.3,Female: 54.8%; Male: 45.2%
+2018,race,_IMPRACE,437436,0.0,White: 75.4%; Hispanic: 8.5%; Black: 8.3%; Other: 3.3%; Asian: 2.5%; American Indian/Alaska Native: 2.0%
+2018,gen_health,GENHLTH,437436,0.3,Very good: 32.6%; Good: 31.7%; Excellent: 16.5%; Fair: 13.9%; Poor: 5.3%
+2018,phys_days,PHYSHLTH,437436,2.0,"median 0.0, min 0.0, max 30.0"
+2018,ment_days,MENTHLTH,437436,1.6,"median 0.0, min 0.0, max 30.0"
+2018,diff_walking,DIFFWALK,437436,3.0,No: 83.1%; Yes: 16.9%
+2018,asthma,ASTHMA3,437436,0.3,No: 85.8%; Yes: 14.2%
+2018,kidney_disease,CHCKDNY1,437436,0.4,No: 96.2%; Yes: 3.8%
+2018,copd,CHCCOPD1,437436,0.5,No: 91.4%; Yes: 8.6%
+2018,depression,ADDEPEV2,437436,0.5,No: 81.2%; Yes: 18.8%
+2018,arthritis,HAVARTH3,437436,0.6,No: 65.6%; Yes: 34.4%
+2018,income,INCOME2,437436,17.4,75k+: 34.0%; 50-75k: 16.1%; 35-50k: 13.7%; 25-35k: 10.5%; 20-25k: 8.9%; 15-20k: 7.2%; 10-15k: 5.0%; <10k: 4.6%
+2018,education,EDUCA,437436,0.4,College graduate: 37.7%; Some college: 27.5%; High school: 27.3%; Less than high school: 7.5%
+2018,last_checkup,CHECKUP1,437436,1.3,Within 1 year: 80.4%; 1-2 years: 9.6%; 2-5 years: 4.9%; 5+ years: 4.6%; Never: 0.5%
+2018,cost_barrier,MEDCOST,437436,0.5,No: 89.7%; Yes: 10.3%
+2018,heart_disease,derived,437436,0.9,No: 90.7%; Yes: 9.3%
+2019,state,_STATE,418268,0.0,
+2019,weight,_LLCPWT,418268,0.0,
+2019,heart_attack,CVDINFR4,418268,0.6,No: 94.1%; Yes: 5.9%
+2019,coronary_heart_disease,CVDCRHD4,418268,1.0,No: 94.3%; Yes: 5.7%
+2019,stroke,CVDSTRK3,418268,0.3,No: 95.5%; Yes: 4.5%
+2019,high_blood_pressure,BPHIGH4,418268,0.4,No: 57.6%; Yes: 40.7%; Borderline: 1.0%; Pregnancy only: 0.7%
+2019,high_cholesterol,TOLDHI2,418268,1.2,No: 59.3%; Yes: 34.9%; Never checked: 5.8%
+2019,diabetes,DIABETE4,418268,0.2,No: 83.2%; Yes: 13.8%; Borderline: 2.2%; Pregnancy only: 0.9%
+2019,smoked_100,SMOKE100,418268,4.4,No: 57.8%; Yes: 42.2%
+2019,heavy_drinker,_RFDRHV7,418268,6.6,No: 94.0%; Yes: 6.0%
+2019,exercise,EXERANY2,418268,5.3,Yes: 72.8%; No: 27.2%
+2019,bmi,_BMI5,418268,8.7,"median 27.3, min 12.0, max 99.8"
+2019,sleep_hours,not asked,418268,100.0,
+2019,age_group,_AGEG5YR,418268,1.6,65-69: 11.0%; 60-64: 10.8%; 70-74: 10.1%; 55-59: 9.5%; 80 or older: 8.7%; 50-54: 7.7%; 75-79: 7.2%; 45-49: 6.3%; 18-24: 6.1%; 35-39: 6.0%; 40-44: 5.9%; 30-34: 5.6%; 25-29: 5.1%
+2019,sex,SEXVAR,418268,0.0,Female: 54.6%; Male: 45.4%
+2019,race,_IMPRACE,418268,0.0,White: 76.2%; Hispanic: 9.0%; Black: 7.6%; Other: 3.4%; Asian: 2.2%; American Indian/Alaska Native: 1.6%
+2019,gen_health,GENHLTH,418268,0.3,Very good: 32.6%; Good: 32.0%; Excellent: 15.8%; Fair: 14.3%; Poor: 5.3%
+2019,phys_days,PHYSHLTH,418268,2.5,"median 0.0, min 0.0, max 30.0"
+2019,ment_days,MENTHLTH,418268,2.1,"median 0.0, min 0.0, max 30.0"
+2019,diff_walking,DIFFWALK,418268,3.7,No: 82.2%; Yes: 17.8%
+2019,asthma,ASTHMA3,418268,0.4,No: 85.9%; Yes: 14.1%
+2019,kidney_disease,CHCKDNY2,418268,0.4,No: 96.1%; Yes: 3.9%
+2019,copd,CHCCOPD2,418268,0.5,No: 91.5%; Yes: 8.5%
+2019,depression,ADDEPEV3,418268,0.5,No: 81.0%; Yes: 19.0%
+2019,arthritis,HAVARTH4,418268,0.6,No: 66.4%; Yes: 33.6%
+2019,income,INCOME2,418268,19.1,75k+: 34.8%; 50-75k: 16.0%; 35-50k: 13.8%; 25-35k: 10.2%; 20-25k: 8.9%; 15-20k: 6.9%; 10-15k: 4.8%; <10k: 4.7%
+2019,education,EDUCA,418268,0.4,College graduate: 37.9%; Some college: 28.0%; High school: 26.9%; Less than high school: 7.2%
+2019,last_checkup,CHECKUP1,418268,1.2,Within 1 year: 80.7%; 1-2 years: 9.3%; 2-5 years: 4.9%; 5+ years: 4.5%; Never: 0.6%
+2019,cost_barrier,MEDCOST,418268,0.3,No: 89.4%; Yes: 10.6%
+2019,heart_disease,derived,418268,1.0,No: 91.1%; Yes: 8.9%
+2020,state,_STATE,401958,0.0,
+2020,weight,_LLCPWT,401958,0.0,
+2020,heart_attack,CVDINFR4,401958,0.5,No: 94.5%; Yes: 5.5%
+2020,coronary_heart_disease,CVDCRHD4,401958,0.8,No: 94.3%; Yes: 5.7%
+2020,stroke,CVDSTRK3,401958,0.3,No: 96.1%; Yes: 3.9%
+2020,high_blood_pressure,not asked,401958,100.0,
+2020,high_cholesterol,not asked,401958,100.0,
+2020,diabetes,DIABETE4,401958,0.2,No: 84.0%; Yes: 13.0%; Borderline: 2.1%; Pregnancy only: 0.8%
+2020,smoked_100,SMOKE100,401958,5.1,No: 58.9%; Yes: 41.1%
+2020,heavy_drinker,_RFDRHV7,401958,7.6,No: 93.5%; Yes: 6.5%
+2020,exercise,EXERANY2,401958,0.2,Yes: 76.2%; No: 23.8%
+2020,bmi,_BMI5,401958,10.3,"median 27.3, min 12.0, max 98.4"
+2020,sleep_hours,SLEPTIM1,401958,1.2,"median 7.0, min 1.0, max 24.0"
+2020,age_group,_AGEG5YR,401958,2.1,65-69: 10.6%; 60-64: 10.5%; 70-74: 9.6%; 55-59: 9.2%; 80 or older: 8.0%; 50-54: 7.9%; 75-79: 6.8%; 45-49: 6.7%; 40-44: 6.5%; 18-24: 6.5%; 35-39: 6.5%; 30-34: 5.9%; 25-29: 5.3%
+2020,sex,SEXVAR,401958,0.0,Female: 54.2%; Male: 45.8%
+2020,race,_IMPRACE,401958,0.0,White: 75.6%; Hispanic: 9.1%; Black: 7.6%; Other: 3.5%; Asian: 2.5%; American Indian/Alaska Native: 1.7%
+2020,gen_health,GENHLTH,401958,0.2,Very good: 34.4%; Good: 29.8%; Excellent: 20.4%; Fair: 11.5%; Poor: 3.9%
+2020,phys_days,PHYSHLTH,401958,2.2,"median 0.0, min 0.0, max 30.0"
+2020,ment_days,MENTHLTH,401958,2.0,"median 0.0, min 0.0, max 30.0"
+2020,diff_walking,DIFFWALK,401958,4.2,No: 85.1%; Yes: 14.9%
+2020,asthma,ASTHMA3,401958,0.3,No: 86.5%; Yes: 13.5%
+2020,kidney_disease,CHCKDNY2,401958,0.4,No: 96.3%; Yes: 3.7%
+2020,copd,CHCCOPD2,401958,0.5,No: 92.1%; Yes: 7.9%
+2020,depression,ADDEPEV3,401958,0.5,No: 81.0%; Yes: 19.0%
+2020,arthritis,HAVARTH4,401958,0.6,No: 68.9%; Yes: 31.1%
+2020,income,INCOME2,401958,19.9,75k+: 36.9%; 50-75k: 16.3%; 35-50k: 13.6%; 25-35k: 9.8%; 20-25k: 8.6%; 15-20k: 6.5%; 10-15k: 4.3%; <10k: 4.0%
+2020,education,EDUCA,401958,0.5,College graduate: 38.8%; Some college: 27.8%; High school: 26.8%; Less than high school: 6.6%
+2020,last_checkup,CHECKUP1,401958,1.3,Within 1 year: 78.4%; 1-2 years: 11.4%; 2-5 years: 5.2%; 5+ years: 4.5%; Never: 0.5%
+2020,cost_barrier,MEDCOST,401958,0.3,No: 91.4%; Yes: 8.6%
+2020,heart_disease,derived,401958,0.9,No: 91.4%; Yes: 8.6%
+2021,state,_STATE,438693,0.0,
+2021,weight,_LLCPWT,438693,0.0,
+2021,heart_attack,CVDINFR4,438693,0.6,No: 94.8%; Yes: 5.2%
+2021,coronary_heart_disease,CVDCRHD4,438693,1.0,No: 94.7%; Yes: 5.3%
+2021,stroke,CVDSTRK3,438693,0.3,No: 96.1%; Yes: 3.9%
+2021,high_blood_pressure,BPHIGH6,438693,0.4,No: 58.7%; Yes: 39.4%; Borderline: 1.0%; Pregnancy only: 0.8%
+2021,high_cholesterol,TOLDHI3,438693,7.4,No: 55.4%; Yes: 36.9%; Never checked: 7.7%
+2021,diabetes,DIABETE4,438693,0.2,No: 83.7%; Yes: 13.2%; Borderline: 2.3%; Pregnancy only: 0.9%
+2021,smoked_100,SMOKE100,438693,5.6,No: 59.5%; Yes: 40.5%
+2021,heavy_drinker,_RFDRHV7,438693,8.0,No: 94.1%; Yes: 5.9%
+2021,exercise,EXERANY2,438693,0.2,Yes: 75.6%; No: 24.4%
+2021,bmi,_BMI5,438693,10.7,"median 27.4, min 12.0, max 99.3"
+2021,sleep_hours,not asked,438693,100.0,
+2021,age_group,_AGEG5YR,438693,2.2,65-69: 10.7%; 60-64: 10.3%; 70-74: 10.0%; 55-59: 8.9%; 80 or older: 8.0%; 50-54: 7.9%; 75-79: 6.9%; 40-44: 6.9%; 35-39: 6.7%; 45-49: 6.6%; 18-24: 6.1%; 30-34: 6.0%; 25-29: 5.0%
+2021,sex,SEXVAR,438693,0.0,Female: 53.5%; Male: 46.5%
+2021,race,_IMPRACE,438693,0.0,White: 75.7%; Hispanic: 8.8%; Black: 7.6%; Other: 3.6%; Asian: 2.6%; American Indian/Alaska Native: 1.7%
+2021,gen_health,GENHLTH,438693,0.3,Very good: 34.1%; Good: 31.5%; Excellent: 17.8%; Fair: 12.5%; Poor: 4.1%
+2021,phys_days,PHYSHLTH,438693,2.2,"median 0.0, min 0.0, max 30.0"
+2021,ment_days,MENTHLTH,438693,1.8,"median 0.0, min 0.0, max 30.0"
+2021,diff_walking,DIFFWALK,438693,4.5,No: 83.9%; Yes: 16.1%
+2021,asthma,ASTHMA3,438693,0.4,No: 85.9%; Yes: 14.1%
+2021,kidney_disease,CHCKDNY2,438693,0.4,No: 96.1%; Yes: 3.9%
+2021,copd,CHCCOPD3,438693,0.5,No: 92.2%; Yes: 7.8%
+2021,depression,ADDEPEV3,438693,0.6,No: 80.4%; Yes: 19.6%
+2021,arthritis,HAVARTH5,438693,0.7,No: 67.3%; Yes: 32.7%
+2021,income,INCOME3,438693,21.5,75k+: 39.0%; 50-75k: 17.3%; 35-50k: 14.0%; 25-35k: 12.7%; 20-25k: 6.1%; 15-20k: 4.3%; 10-15k: 3.3%; <10k: 3.2%
+2021,education,EDUCA,438693,0.6,College graduate: 40.9%; Some college: 27.5%; High school: 25.6%; Less than high school: 6.0%
+2021,last_checkup,CHECKUP1,438693,1.3,Within 1 year: 77.9%; 1-2 years: 11.8%; 2-5 years: 5.4%; 5+ years: 4.3%; Never: 0.5%
+2021,cost_barrier,MEDCOST1,438693,0.3,No: 92.5%; Yes: 7.5%
+2021,heart_disease,derived,438693,1.1,No: 91.9%; Yes: 8.1%
+2022,state,_STATE,445132,0.0,
+2022,weight,_LLCPWT,445132,0.0,
+2022,heart_attack,CVDINFR4,445132,0.7,No: 94.3%; Yes: 5.7%
+2022,coronary_heart_disease,CVDCRHD4,445132,1.0,No: 94.0%; Yes: 6.0%
+2022,stroke,CVDSTRK3,445132,0.3,No: 95.7%; Yes: 4.3%
+2022,high_blood_pressure,not asked,445132,100.0,
+2022,high_cholesterol,not asked,445132,100.0,
+2022,diabetes,DIABETE4,445132,0.2,No: 83.0%; Yes: 13.8%; Borderline: 2.3%; Pregnancy only: 0.9%
+2022,smoked_100,SMOKE100,445132,7.9,No: 60.0%; Yes: 40.0%
+2022,heavy_drinker,_RFDRHV8,445132,11.2,No: 93.3%; Yes: 6.7%
+2022,exercise,EXERANY2,445132,0.2,Yes: 76.0%; No: 24.0%
+2022,bmi,_BMI5,445132,11.0,"median 27.4, min 12.0, max 99.6"
+2022,sleep_hours,SLEPTIM1,445132,1.2,"median 7.0, min 1.0, max 24.0"
+2022,age_group,_AGEG5YR,445132,2.0,65-69: 10.8%; 60-64: 10.2%; 70-74: 10.0%; 55-59: 8.4%; 80 or older: 8.3%; 50-54: 7.7%; 75-79: 7.5%; 40-44: 6.9%; 45-49: 6.5%; 35-39: 6.5%; 18-24: 6.2%; 30-34: 5.9%; 25-29: 5.0%
+2022,sex,SEXVAR,445132,0.0,Female: 53.0%; Male: 47.0%
+2022,race,_IMPRACE,445132,0.0,White: 74.9%; Hispanic: 9.7%; Black: 8.1%; Asian: 3.0%; Other: 2.7%; American Indian/Alaska Native: 1.6%
+2022,gen_health,GENHLTH,445132,0.3,Very good: 33.4%; Good: 32.3%; Excellent: 16.2%; Fair: 13.6%; Poor: 4.4%
+2022,phys_days,PHYSHLTH,445132,2.5,"median 0.0, min 0.0, max 30.0"
+2022,ment_days,MENTHLTH,445132,2.0,"median 0.0, min 0.0, max 30.0"
+2022,diff_walking,DIFFWALK,445132,5.4,No: 83.8%; Yes: 16.2%
+2022,asthma,ASTHMA3,445132,0.4,No: 85.0%; Yes: 15.0%
+2022,kidney_disease,CHCKDNY2,445132,0.4,No: 95.4%; Yes: 4.6%
+2022,copd,CHCCOPD3,445132,0.5,No: 91.9%; Yes: 8.1%
+2022,depression,ADDEPEV3,445132,0.6,No: 79.3%; Yes: 20.7%
+2022,arthritis,HAVARTH4,445132,0.6,No: 65.8%; Yes: 34.2%
+2022,income,INCOME3,445132,21.6,75k+: 41.5%; 50-75k: 16.9%; 35-50k: 13.4%; 25-35k: 12.1%; 20-25k: 5.8%; 15-20k: 4.1%; 10-15k: 3.2%; <10k: 3.0%
+2022,education,EDUCA,445132,0.5,College graduate: 42.3%; Some college: 27.2%; High school: 24.6%; Less than high school: 5.9%
+2022,last_checkup,CHECKUP1,445132,1.3,Within 1 year: 79.9%; 1-2 years: 9.5%; 2-5 years: 5.7%; 5+ years: 4.3%; Never: 0.6%
+2022,cost_barrier,MEDCOST1,445132,0.4,No: 91.6%; Yes: 8.4%
+2022,heart_disease,derived,445132,1.1,No: 91.0%; Yes: 9.0%
+2023,state,_STATE,433323,0.0,
+2023,weight,_LLCPWT,433323,0.0,
+2023,heart_attack,CVDINFR4,433323,0.6,No: 94.6%; Yes: 5.4%
+2023,coronary_heart_disease,CVDCRHD4,433323,1.0,No: 94.5%; Yes: 5.5%
+2023,stroke,CVDSTRK3,433323,0.3,No: 95.8%; Yes: 4.2%
+2023,high_blood_pressure,BPHIGH6,433323,0.4,No: 57.5%; Yes: 40.8%; Borderline: 0.9%; Pregnancy only: 0.8%
+2023,high_cholesterol,TOLDHI3,433323,6.9,No: 54.3%; Yes: 39.4%; Never checked: 6.3%
+2023,diabetes,DIABETE4,433323,0.2,No: 83.0%; Yes: 13.8%; Borderline: 2.5%; Pregnancy only: 0.8%
+2023,smoked_100,SMOKE100,433323,5.2,No: 61.3%; Yes: 38.7%
+2023,heavy_drinker,_RFDRHV8,433323,7.6,No: 94.1%; Yes: 5.9%
+2023,exercise,EXERANY2,433323,0.3,Yes: 75.3%; No: 24.7%
+2023,bmi,_BMI5,433323,9.4,"median 27.4, min 12.0, max 99.8"
+2023,sleep_hours,not asked,433323,100.0,
+2023,age_group,_AGEG5YR,433323,1.8,65-69: 10.8%; 70-74: 10.2%; 60-64: 9.9%; 80 or older: 9.1%; 75-79: 8.1%; 55-59: 8.0%; 50-54: 7.4%; 40-44: 6.7%; 35-39: 6.4%; 45-49: 6.4%; 18-24: 6.2%; 30-34: 5.8%; 25-29: 5.0%
+2023,sex,SEXVAR,433323,0.0,Female: 53.0%; Male: 47.0%
+2023,race,_IMPRACE,433323,0.0,White: 74.1%; Hispanic: 10.0%; Black: 7.7%; Other: 3.7%; Asian: 2.8%; American Indian/Alaska Native: 1.6%
+2023,gen_health,GENHLTH,433323,0.3,Good: 33.4%; Very good: 32.9%; Excellent: 14.7%; Fair: 14.3%; Poor: 4.7%
+2023,phys_days,PHYSHLTH,433323,2.5,"median 0.0, min 0.0, max 30.0"
+2023,ment_days,MENTHLTH,433323,1.9,"median 0.0, min 0.0, max 30.0"
+2023,diff_walking,DIFFWALK,433323,4.1,No: 83.9%; Yes: 16.1%
+2023,asthma,ASTHMA3,433323,0.4,No: 85.1%; Yes: 14.9%
+2023,kidney_disease,CHCKDNY2,433323,0.4,No: 95.2%; Yes: 4.8%
+2023,copd,CHCCOPD3,433323,0.5,No: 92.3%; Yes: 7.7%
+2023,depression,ADDEPEV3,433323,0.6,No: 79.5%; Yes: 20.5%
+2023,arthritis,HAVARTH4,433323,0.6,No: 66.9%; Yes: 33.1%
+2023,income,INCOME3,433323,20.0,75k+: 44.0%; 50-75k: 16.7%; 35-50k: 13.7%; 25-35k: 11.1%; 20-25k: 5.3%; 15-20k: 3.7%; 10-15k: 2.9%; <10k: 2.7%
+2023,education,EDUCA,433323,0.5,College graduate: 42.9%; Some college: 26.5%; High school: 24.7%; Less than high school: 5.8%
+2023,last_checkup,CHECKUP1,433323,1.3,Within 1 year: 81.4%; 1-2 years: 8.9%; 2-5 years: 4.9%; 5+ years: 4.1%; Never: 0.6%
+2023,cost_barrier,MEDCOST1,433323,0.4,No: 91.4%; Yes: 8.6%
+2023,heart_disease,derived,433323,1.1,No: 91.5%; Yes: 8.5%
+2024,state,_STATE,457670,0.0,
+2024,weight,_LLCPWT,457670,0.0,
+2024,heart_attack,CVDINFR4,457670,0.7,No: 94.1%; Yes: 5.9%
+2024,coronary_heart_disease,CVDCRHD4,457670,1.0,No: 93.7%; Yes: 6.3%
+2024,stroke,CVDSTRK3,457670,0.3,No: 95.5%; Yes: 4.5%
+2024,high_blood_pressure,not asked,457670,100.0,
+2024,high_cholesterol,not asked,457670,100.0,
+2024,diabetes,DIABETE4,457670,0.2,No: 82.4%; Yes: 14.4%; Borderline: 2.5%; Pregnancy only: 0.7%
+2024,smoked_100,SMOKE100,457670,6.9,No: 60.8%; Yes: 39.2%
+2024,heavy_drinker,_RFDRHV9,457670,10.2,No: 94.1%; Yes: 5.9%
+2024,exercise,EXERANY2,457670,0.3,Yes: 76.7%; No: 23.3%
+2024,bmi,_BMI5,457670,9.4,"median 27.4, min 12.0, max 99.8"
+2024,sleep_hours,not asked,457670,100.0,
+2024,age_group,_AGEG5YR,457670,1.8,65-69: 10.6%; 70-74: 10.0%; 60-64: 9.7%; 80 or older: 9.3%; 75-79: 8.2%; 55-59: 7.8%; 50-54: 7.1%; 40-44: 6.9%; 18-24: 6.6%; 45-49: 6.4%; 35-39: 6.4%; 30-34: 5.8%; 25-29: 5.3%
+2024,sex,SEXVAR,457670,0.0,Female: 52.5%; Male: 47.5%
+2024,race,_IMPRACE,457670,0.0,White: 73.6%; Hispanic: 10.7%; Black: 7.8%; Other: 3.7%; Asian: 2.8%; American Indian/Alaska Native: 1.4%
+2024,gen_health,GENHLTH,457670,0.3,Good: 34.2%; Very good: 31.9%; Fair: 14.9%; Excellent: 14.1%; Poor: 4.9%
+2024,phys_days,PHYSHLTH,457670,2.4,"median 0.0, min 0.0, max 30.0"
+2024,ment_days,MENTHLTH,457670,1.8,"median 0.0, min 0.0, max 30.0"
+2024,diff_walking,DIFFWALK,457670,4.5,No: 83.7%; Yes: 16.3%
+2024,asthma,ASTHMA3,457670,0.4,No: 84.2%; Yes: 15.8%
+2024,kidney_disease,CHCKDNY2,457670,0.4,No: 94.8%; Yes: 5.2%
+2024,copd,CHCCOPD3,457670,0.5,No: 91.9%; Yes: 8.1%
+2024,depression,ADDEPEV3,457670,0.6,No: 78.9%; Yes: 21.1%
+2024,arthritis,HAVARTH4,457670,0.6,No: 65.2%; Yes: 34.8%
+2024,income,INCOME3,457670,19.1,75k+: 44.3%; 50-75k: 16.4%; 35-50k: 13.4%; 25-35k: 11.3%; 20-25k: 5.4%; 15-20k: 3.7%; 10-15k: 2.8%; <10k: 2.8%
+2024,education,EDUCA,457670,0.5,College graduate: 42.1%; Some college: 26.5%; High school: 25.5%; Less than high school: 6.0%
+2024,last_checkup,CHECKUP1,457670,1.2,Within 1 year: 81.8%; 1-2 years: 8.8%; 2-5 years: 4.7%; 5+ years: 4.1%; Never: 0.6%
+2024,cost_barrier,MEDCOST1,457670,0.4,No: 90.5%; Yes: 9.5%
+2024,heart_disease,derived,457670,1.1,No: 90.6%; Yes: 9.4%
+2025,state,_STATE,356158,0.0,
+2025,weight,_LLCPWT,356158,0.0,
+2025,heart_attack,CVDINFR4,356158,0.6,No: 94.3%; Yes: 5.7%
+2025,coronary_heart_disease,CVDCRHD4,356158,1.0,No: 94.1%; Yes: 5.9%
+2025,stroke,CVDSTRK3,356158,0.3,No: 95.4%; Yes: 4.6%
+2025,high_blood_pressure,BPHIGH6,356158,1.2,No: 56.5%; Yes: 41.8%; Borderline: 0.9%; Pregnancy only: 0.8%
+2025,high_cholesterol,TOLDHI3,356158,7.3,No: 53.4%; Yes: 40.8%; Never checked: 5.7%
+2025,diabetes,DIABETE4,356158,0.2,No: 81.8%; Yes: 14.6%; Borderline: 2.9%; Pregnancy only: 0.8%
+2025,smoked_100,SMOKE100,356158,5.7,No: 61.0%; Yes: 39.0%
+2025,heavy_drinker,_RFDRHV9,356158,8.1,No: 95.0%; Yes: 5.0%
+2025,exercise,EXERANY2,356158,0.3,Yes: 76.8%; No: 23.2%
+2025,bmi,_BMI5,356158,9.1,"median 27.4, min 12.0, max 98.4"
+2025,sleep_hours,SLEPTIM1,356158,7.7,"median 7.0, min 1.0, max 24.0"
+2025,age_group,_AGEG5YR,356158,1.9,65-69: 10.6%; 80 or older: 10.6%; 70-74: 10.2%; 60-64: 9.3%; 75-79: 8.9%; 55-59: 7.4%; 18-24: 6.6%; 50-54: 6.6%; 40-44: 6.6%; 45-49: 6.3%; 35-39: 6.1%; 30-34: 5.5%; 25-29: 5.2%
+2025,sex,SEXVAR,356158,0.0,Female: 52.7%; Male: 47.3%
+2025,race,_IMPRACE,356158,0.0,White: 74.5%; Hispanic: 9.9%; Black: 7.4%; Other: 4.0%; Asian: 2.8%; American Indian/Alaska Native: 1.5%
+2025,gen_health,GENHLTH,356158,0.3,Good: 34.0%; Very good: 32.3%; Fair: 15.0%; Excellent: 13.8%; Poor: 5.0%
+2025,phys_days,PHYSHLTH,356158,2.3,"median 0.0, min 0.0, max 30.0"
+2025,ment_days,MENTHLTH,356158,1.8,"median 0.0, min 0.0, max 30.0"
+2025,diff_walking,DIFFWALK,356158,4.5,No: 83.3%; Yes: 16.7%
+2025,asthma,ASTHMA3,356158,0.4,No: 84.2%; Yes: 15.8%
+2025,kidney_disease,CHCKDNY2,356158,0.4,No: 94.6%; Yes: 5.4%
+2025,copd,CHCCOPD3,356158,0.5,No: 92.0%; Yes: 8.0%
+2025,depression,ADDEPEV3,356158,0.6,No: 78.9%; Yes: 21.1%
+2025,arthritis,HAVARTH4,356158,0.6,No: 65.6%; Yes: 34.4%
+2025,income,INCOME3,356158,19.9,75k+: 44.9%; 50-75k: 16.2%; 35-50k: 13.3%; 25-35k: 11.1%; 20-25k: 5.4%; 15-20k: 3.6%; 10-15k: 2.8%; <10k: 2.7%
+2025,education,EDUCA,356158,0.6,College graduate: 41.8%; Some college: 26.5%; High school: 26.0%; Less than high school: 5.7%
+2025,last_checkup,CHECKUP1,356158,1.1,Within 1 year: 82.8%; 1-2 years: 8.3%; 2-5 years: 4.4%; 5+ years: 4.1%; Never: 0.6%
+2025,cost_barrier,MEDCOST1,356158,0.3,No: 90.3%; Yes: 9.7%
+2025,heart_disease,derived,356158,1.1,No: 91.0%; Yes: 9.0%
