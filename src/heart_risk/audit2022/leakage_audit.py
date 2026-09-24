@@ -20,10 +20,10 @@ from imblearn.under_sampling import EditedNearestNeighbours
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
-from .charts import INK_2, MUTED, SERIES, plt, save
+from ..charts import INK_2, MUTED, SERIES, plt, save
 from .data import PROJECT, load
 from .features import AGE_ORDER, GEN_HEALTH_ORDER
-from .metrics import summary
+from ..metrics import summary
 
 # The 9 features the 2022 version kept, and its final logistic regression settings.
 FEATURES_2022 = ["AgeCategory", "DiffWalking", "PhysicalHealth", "Diabetic", "Stroke",
@@ -67,12 +67,12 @@ def main():
     b = fit_and_score(Xb_tr_res, yb_tr_res, Xb_te, yb_te)
     b["test_prevalence"] = round(float(yb_te.mean()), 4)
 
-    metrics = json.loads((PROJECT / "reports" / "metrics.json").read_text(encoding="utf-8"))
-    meta = json.loads((PROJECT / "models" / "metadata.json").read_text(encoding="utf-8"))
+    metrics = json.loads((PROJECT / "reports" / "audit2022" / "metrics.json").read_text(encoding="utf-8"))
+    meta = json.loads((PROJECT / "models" / "audit2022" / "metadata.json").read_text(encoding="utf-8"))
     c = metrics["results"][meta["app_model"]]["best_f1"]
 
     audit = {"A_2022_as_reported": a, "B_2022_method_fair_test": b, "C_2026_model": c}
-    (PROJECT / "reports" / "leakage_audit.json").write_text(json.dumps(audit, indent=2), encoding="utf-8")
+    (PROJECT / "reports" / "audit2022" / "leakage_audit.json").write_text(json.dumps(audit, indent=2), encoding="utf-8")
     for k, v in audit.items():
         print(f"{k:28s} F1 {v['f1']:.3f}  precision {v['precision']:.3f}  recall {v['recall']:.3f}  "
               f"accuracy {v['accuracy']:.3f}  ROC-AUC {v['roc_auc']:.3f}")
@@ -87,7 +87,7 @@ def main():
     ax.grid(axis="y", visible=False)
     ax.set_xlabel("F1-score for heart disease (higher is better)")
     ax.set_title("The 2022 F1 of 0.91 came from a leaky evaluation")
-    save(fig, PROJECT / "reports" / "figures" / "leakage_audit.png")
+    save(fig, PROJECT / "reports" / "audit2022" / "figures" / "leakage_audit.png")
 
 
 if __name__ == "__main__":

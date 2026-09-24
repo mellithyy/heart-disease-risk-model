@@ -19,10 +19,10 @@ from sklearn.model_selection import StratifiedKFold, cross_val_predict
 
 from .data import PROJECT, RANDOM_STATE, load, split
 from .features import AGE_ORDER, FEATURES
-from .metrics import summary, threshold_for_recall, threshold_max_f1
+from ..metrics import summary, threshold_for_recall, threshold_max_f1
 from .models import CANDIDATES
 
-MODELS_DIR = PROJECT / "models"
+MODELS_DIR = PROJECT / "models" / "audit2022"
 
 
 def main():

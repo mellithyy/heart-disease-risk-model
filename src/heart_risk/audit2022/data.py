@@ -1,10 +1,9 @@
 """Load the survey data and make the one train/test split used everywhere."""
-from pathlib import Path
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-PROJECT = Path(__file__).resolve().parents[2]
+from ..paths import PROJECT
+
 DATA_FILE = PROJECT / "data" / "heart_2020_cleaned.csv.gz"
 
 TARGET = "HeartDisease"

@@ -12,13 +12,13 @@ from sklearn.calibration import calibration_curve
 from sklearn.inspection import permutation_importance
 from sklearn.metrics import precision_recall_curve
 
-from .charts import INK_2, MUTED, NICE, SERIES, plt, save
+from ..charts import INK_2, MUTED, NICE, SERIES, plt, save
 from .data import PROJECT, RANDOM_STATE, features_and_target, load, split
 from .features import AGE_ORDER, GEN_HEALTH_ORDER
-from .metrics import summary
+from ..metrics import summary
 from .models import CANDIDATES, LABELS
 
-MODELS_DIR, REPORTS = PROJECT / "models", PROJECT / "reports"
+MODELS_DIR, REPORTS = PROJECT / "models" / "audit2022", PROJECT / "reports" / "audit2022"
 FIGURES = REPORTS / "figures"
 
 

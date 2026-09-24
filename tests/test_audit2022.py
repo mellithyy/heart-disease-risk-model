@@ -1,12 +1,13 @@
-"""Checks that guard the parts most likely to break silently: the data, the split and the saved model."""
+"""Part 1 (2022 audit, Kaggle 2020 data): the data file, the split and the saved fair model."""
 import json
 
 import joblib
 import pandas as pd
 import pytest
 
-from heart_risk.data import PROJECT, load, split
-from heart_risk.features import FEATURES, preprocessor
+from heart_risk.audit2022.data import load, split
+from heart_risk.audit2022.features import FEATURES, preprocessor
+from heart_risk.paths import PROJECT
 
 
 @pytest.fixture(scope="module")
@@ -35,8 +36,8 @@ def test_preprocessor_handles_every_answer(df):
 
 
 def test_saved_model_gives_probabilities(df):
-    meta = json.loads((PROJECT / "models" / "metadata.json").read_text(encoding="utf-8"))
-    model = joblib.load(PROJECT / "models" / f"{meta['app_model']}.joblib")
+    meta = json.loads((PROJECT / "models" / "audit2022" / "metadata.json").read_text(encoding="utf-8"))
+    model = joblib.load(PROJECT / "models" / "audit2022" / f"{meta['app_model']}.joblib")
     proba = model.predict_proba(df[meta["features"]].head(200))[:, 1]
     assert ((proba >= 0) & (proba <= 1)).all()
     young_healthy = df[meta["features"]].iloc[[0]].assign(AgeCategory="18-24", GenHealth="Excellent",
