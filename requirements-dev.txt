@@ -1,0 +1,5 @@
+# Everything above, plus what the analysis, the leakage audit and the tests need.
+-r requirements.txt
+matplotlib==3.11.0
+imbalanced-learn==0.14.2
+pytest==9.1.1
