@@ -1,0 +1,283 @@
+{
+  "trained_on": "2026-09-24",
+  "app_model": "gradient_boosting",
+  "gb_settings": {
+    "lr0.05_leaves63": {
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 63,
+      "min_samples_leaf": 500
+    }
+  },
+  "train_years": [
+    2011,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021
+  ],
+  "valid_year": 2023,
+  "test_year": 2025,
+  "final_train_rows": 3149185,
+  "prevalence_final_train": 0.0878,
+  "features": [
+    "age_group",
+    "gen_health",
+    "income",
+    "education",
+    "sex",
+    "race",
+    "smoked_100",
+    "heavy_drinker",
+    "exercise",
+    "diff_walking",
+    "stroke",
+    "high_blood_pressure",
+    "high_cholesterol",
+    "diabetes",
+    "asthma",
+    "kidney_disease",
+    "copd",
+    "depression",
+    "arthritis",
+    "bmi",
+    "phys_days",
+    "ment_days"
+  ],
+  "features_without_bp_chol": [
+    "age_group",
+    "gen_health",
+    "income",
+    "education",
+    "sex",
+    "race",
+    "smoked_100",
+    "heavy_drinker",
+    "exercise",
+    "diff_walking",
+    "stroke",
+    "diabetes",
+    "asthma",
+    "kidney_disease",
+    "copd",
+    "depression",
+    "arthritis",
+    "bmi",
+    "phys_days",
+    "ment_days"
+  ],
+  "answers": {
+    "age_group": [
+      "18-24",
+      "25-29",
+      "30-34",
+      "35-39",
+      "40-44",
+      "45-49",
+      "50-54",
+      "55-59",
+      "60-64",
+      "65-69",
+      "70-74",
+      "75-79",
+      "80 or older"
+    ],
+    "gen_health": [
+      "Poor",
+      "Fair",
+      "Good",
+      "Very good",
+      "Excellent"
+    ],
+    "income": [
+      "<10k",
+      "10-15k",
+      "15-20k",
+      "20-25k",
+      "25-35k",
+      "35-50k",
+      "50-75k",
+      "75k+"
+    ],
+    "education": [
+      "Less than high school",
+      "High school",
+      "Some college",
+      "College graduate"
+    ],
+    "sex": [
+      "Female",
+      "Male"
+    ],
+    "race": [
+      "White",
+      "Black",
+      "Asian",
+      "American Indian/Alaska Native",
+      "Hispanic",
+      "Other"
+    ],
+    "smoked_100": [
+      "No",
+      "Yes"
+    ],
+    "heavy_drinker": [
+      "No",
+      "Yes"
+    ],
+    "exercise": [
+      "No",
+      "Yes"
+    ],
+    "diff_walking": [
+      "No",
+      "Yes"
+    ],
+    "stroke": [
+      "No",
+      "Yes"
+    ],
+    "high_blood_pressure": [
+      "No",
+      "Borderline",
+      "Pregnancy only",
+      "Yes"
+    ],
+    "high_cholesterol": [
+      "No",
+      "Never checked",
+      "Yes"
+    ],
+    "diabetes": [
+      "No",
+      "Borderline",
+      "Pregnancy only",
+      "Yes"
+    ],
+    "asthma": [
+      "No",
+      "Yes"
+    ],
+    "kidney_disease": [
+      "No",
+      "Yes"
+    ],
+    "copd": [
+      "No",
+      "Yes"
+    ],
+    "depression": [
+      "No",
+      "Yes"
+    ],
+    "arthritis": [
+      "No",
+      "Yes"
+    ]
+  },
+  "validation_2023": {
+    "lr0.1_leaves31": {
+      "pr_auc": 0.3623,
+      "roc_auc": 0.8533,
+      "trees": 411
+    },
+    "lr0.1_leaves63": {
+      "pr_auc": 0.3631,
+      "roc_auc": 0.8533,
+      "trees": 158
+    },
+    "lr0.05_leaves63": {
+      "pr_auc": 0.3634,
+      "roc_auc": 0.8534,
+      "trees": 426
+    },
+    "lr0.05_leaves127": {
+      "pr_auc": 0.3633,
+      "roc_auc": 0.8533,
+      "trees": 231
+    },
+    "logistic_regression": {
+      "pr_auc": 0.3556,
+      "roc_auc": 0.8483
+    },
+    "gb_without_bp_chol": {
+      "pr_auc": 0.35,
+      "roc_auc": 0.8445
+    }
+  },
+  "thresholds": {
+    "gradient_boosting": {
+      "best_f1": 0.2252,
+      "screening_recall_80": 0.0978
+    },
+    "logistic_regression": {
+      "best_f1": 0.2037,
+      "screening_recall_80": 0.0888
+    },
+    "gb_without_bp_chol": {
+      "best_f1": 0.2047,
+      "screening_recall_80": 0.0948
+    }
+  },
+  "weighted_rate_2021_2025": 0.0663,
+  "weighted_rates_by_age_sex_2021_2025": {
+    "18-24": {
+      "Female": 0.0071,
+      "Male": 0.0084
+    },
+    "25-29": {
+      "Female": 0.0092,
+      "Male": 0.0132
+    },
+    "30-34": {
+      "Female": 0.011,
+      "Male": 0.014
+    },
+    "35-39": {
+      "Female": 0.0169,
+      "Male": 0.0185
+    },
+    "40-44": {
+      "Female": 0.0211,
+      "Male": 0.0253
+    },
+    "45-49": {
+      "Female": 0.0294,
+      "Male": 0.0422
+    },
+    "50-54": {
+      "Female": 0.0453,
+      "Male": 0.0672
+    },
+    "55-59": {
+      "Female": 0.0616,
+      "Male": 0.0976
+    },
+    "60-64": {
+      "Female": 0.0753,
+      "Male": 0.1302
+    },
+    "65-69": {
+      "Female": 0.0869,
+      "Male": 0.1582
+    },
+    "70-74": {
+      "Female": 0.1082,
+      "Male": 0.2073
+    },
+    "75-79": {
+      "Female": 0.1334,
+      "Male": 0.2556
+    },
+    "80 or older": {
+      "Female": 0.1729,
+      "Male": 0.2883
+    }
+  },
+  "versions": {
+    "python": "3.14.6",
+    "scikit-learn": "1.9.0",
+    "pandas": "3.0.5",
+    "numpy": "2.5.3"
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "test_year": 2025,
+  "test_rows": 352145,
+  "test_prevalence": 0.09,
+  "results": {
+    "gradient_boosting": {
+      "best_f1": {
+        "threshold": 0.2252,
+        "roc_auc": 0.8506,
+        "pr_auc": 0.3755,
+        "brier": 0.0672,
+        "f1": 0.4152,
+        "precision": 0.3407,
+        "recall": 0.5313,
+        "accuracy": 0.8653,
+        "confusion": {
+          "tn": 287884,
+          "fp": 32574,
+          "fn": 14853,
+          "tp": 16834
+        }
+      },
+      "screening_recall_80": {
+        "threshold": 0.0978,
+        "roc_auc": 0.8506,
+        "pr_auc": 0.3755,
+        "brier": 0.0672,
+        "f1": 0.3613,
+        "precision": 0.2327,
+        "recall": 0.8072,
+        "accuracy": 0.7432,
+        "confusion": {
+          "tn": 236134,
+          "fp": 84324,
+          "fn": 6108,
+          "tp": 25579
+        }
+      },
+      "weighted_roc_auc": 0.8715,
+      "weighted_pr_auc": 0.3691,
+      "mean_predicted": 0.0949
+    },
+    "logistic_regression": {
+      "best_f1": {
+        "threshold": 0.2037,
+        "roc_auc": 0.8452,
+        "pr_auc": 0.3657,
+        "brier": 0.068,
+        "f1": 0.4067,
+        "precision": 0.3323,
+        "recall": 0.524,
+        "accuracy": 0.8624,
+        "confusion": {
+          "tn": 287098,
+          "fp": 33360,
+          "fn": 15083,
+          "tp": 16604
+        }
+      },
+      "screening_recall_80": {
+        "threshold": 0.0888,
+        "roc_auc": 0.8452,
+        "pr_auc": 0.3657,
+        "brier": 0.068,
+        "f1": 0.3551,
+        "precision": 0.2276,
+        "recall": 0.8077,
+        "accuracy": 0.736,
+        "confusion": {
+          "tn": 233583,
+          "fp": 86875,
+          "fn": 6092,
+          "tp": 25595
+        }
+      },
+      "weighted_roc_auc": 0.8635,
+      "weighted_pr_auc": 0.3522,
+      "mean_predicted": 0.0946
+    },
+    "gb_without_bp_chol": {
+      "best_f1": {
+        "threshold": 0.2047,
+        "roc_auc": 0.8423,
+        "pr_auc": 0.3605,
+        "brier": 0.0681,
+        "f1": 0.4022,
+        "precision": 0.3168,
+        "recall": 0.5508,
+        "accuracy": 0.8527,
+        "confusion": {
+          "tn": 282814,
+          "fp": 37644,
+          "fn": 14234,
+          "tp": 17453
+        }
+      },
+      "screening_recall_80": {
+        "threshold": 0.0948,
+        "roc_auc": 0.8423,
+        "pr_auc": 0.3605,
+        "brier": 0.0681,
+        "f1": 0.3483,
+        "precision": 0.2218,
+        "recall": 0.81,
+        "accuracy": 0.7272,
+        "confusion": {
+          "tn": 230413,
+          "fp": 90045,
+          "fn": 6019,
+          "tp": 25668
+        }
+      },
+      "weighted_roc_auc": 0.8644,
+      "weighted_pr_auc": 0.3555,
+      "mean_predicted": 0.0953
+    },
+    "baseline_always_no": {
+      "threshold": 0.5,
+      "roc_auc": 0.5,
+      "pr_auc": 0.09,
+      "brier": 0.09,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "accuracy": 0.91,
+      "confusion": {
+        "tn": 320458,
+        "fp": 0,
+        "fn": 31687,
+        "tp": 0
+      }
+    }
+  },
+  "subgroups_gradient_boosting": {
+    "Sex: Female": {
+      "rows": 185705,
+      "prevalence": 0.0706,
+      "roc_auc": 0.8419,
+      "pr_auc": 0.3131,
+      "recall": 0.4027,
+      "precision": 0.3271
+    },
+    "Sex: Male": {
+      "rows": 166440,
+      "prevalence": 0.1116,
+      "roc_auc": 0.8498,
+      "pr_auc": 0.4151,
+      "recall": 0.622,
+      "precision": 0.3473
+    },
+    "Age band: 65+": {
+      "rows": 138524,
+      "prevalence": 0.1635,
+      "roc_auc": 0.7666,
+      "pr_auc": 0.4019,
+      "recall": 0.6047,
+      "precision": 0.3409
+    },
+    "Age band: 45-64": {
+      "rows": 102817,
+      "prevalence": 0.0697,
+      "roc_auc": 0.83,
+      "pr_auc": 0.3202,
+      "recall": 0.3908,
+      "precision": 0.337
+    },
+    "Age band: 18-44": {
+      "rows": 104344,
+      "prevalence": 0.0135,
+      "roc_auc": 0.8306,
+      "pr_auc": 0.1702,
+      "recall": 0.1371,
+      "precision": 0.369
+    },
+    "Race: Black": {
+      "rows": 25990,
+      "prevalence": 0.0757,
+      "roc_auc": 0.8478,
+      "pr_auc": 0.3495,
+      "recall": 0.4395,
+      "precision": 0.3328
+    },
+    "Race: White": {
+      "rows": 262387,
+      "prevalence": 0.098,
+      "roc_auc": 0.8435,
+      "pr_auc": 0.3786,
+      "recall": 0.5474,
+      "precision": 0.3393
+    },
+    "Race: Asian": {
+      "rows": 9892,
+      "prevalence": 0.0381,
+      "roc_auc": 0.8779,
+      "pr_auc": 0.2906,
+      "recall": 0.2997,
+      "precision": 0.3373
+    },
+    "Race: Hispanic": {
+      "rows": 34901,
+      "prevalence": 0.0516,
+      "roc_auc": 0.8644,
+      "pr_auc": 0.3333,
+      "recall": 0.4012,
+      "precision": 0.3506
+    }
+  },
+  "calibration": {
+    "gradient_boosting": {
+      "predicted": [
+        0.002,
+        0.0032,
+        0.0049,
+        0.0073,
+        0.0109,
+        0.0167,
+        0.0252,
+        0.0371,
+        0.0534,
+        0.0751,
+        0.1043,
+        0.1436,
+        0.1988,
+        0.2812,
+        0.4603
+      ],
+      "observed": [
+        0.0017,
+        0.0035,
+        0.0053,
+        0.0078,
+        0.0104,
+        0.0151,
+        0.0252,
+        0.0352,
+        0.053,
+        0.0736,
+        0.1007,
+        0.1413,
+        0.1824,
+        0.2577,
+        0.4366
+      ]
+    },
+    "logistic_regression": {
+      "predicted": [
+        0.0028,
+        0.0051,
+        0.0078,
+        0.0112,
+        0.0158,
+        0.022,
+        0.0303,
+        0.0409,
+        0.0548,
+        0.0728,
+        0.0969,
+        0.1304,
+        0.1802,
+        0.2651,
+        0.4835
+      ],
+      "observed": [
+        0.0032,
+        0.0041,
+        0.0058,
+        0.0092,
+        0.0116,
+        0.0158,
+        0.0248,
+        0.0372,
+        0.0538,
+        0.0736,
+        0.1038,
+        0.1406,
+        0.1856,
+        0.2534,
+        0.4273
+      ]
+    }
+  },
+  "permutation_importance": {
+    "age_group": 0.0722,
+    "gen_health": 0.052,
+    "sex": 0.0327,
+    "stroke": 0.0273,
+    "high_cholesterol": 0.0164,
+    "kidney_disease": 0.0118,
+    "copd": 0.0116,
+    "high_blood_pressure": 0.011,
+    "diabetes": 0.0088,
+    "race": 0.0072,
+    "diff_walking": 0.005,
+    "income": 0.0028,
+    "phys_days": 0.0019,
+    "arthritis": 0.0015,
+    "depression": 0.0014,
+    "smoked_100": 0.0007,
+    "heavy_drinker": 0.0007,
+    "bmi": 0.0006,
+    "ment_days": 0.0004,
+    "asthma": 0.0003,
+    "education": 0.0003,
+    "exercise": 0.0001
+  }
+}
