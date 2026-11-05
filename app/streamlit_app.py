@@ -78,7 +78,7 @@ with st.sidebar:
     st.caption("Nothing you enter is saved. Skip anything with \"Prefer not to say\".")
     with st.expander("About you", expanded=True):
         age = st.selectbox("Age group", answers["age_group"], index=answers["age_group"].index("55-59"))
-        sex = st.radio("Sex", ["Female", "Male"], horizontal=True)
+        sex = st.radio("Gender", ["Female", "Male"], horizontal=True)
         c1, c2 = st.columns(2)
         height = c1.number_input("Height (cm)", 120, 220, 170)
         weight = c2.number_input("Weight (kg)", 30, 250, 78)
@@ -301,7 +301,7 @@ with tab3:
     with c2:
         st.markdown("##### What the model relies on")
         nice = {"age_group": "Age group", "gen_health": "General health", "income": "Income", "education": "Education",
-                "sex": "Sex", "race": "Race", "smoked_100": "Ever smoked", "heavy_drinker": "Heavy drinking",
+                "sex": "Gender", "race": "Race", "smoked_100": "Ever smoked", "heavy_drinker": "Heavy drinking",
                 "exercise": "Exercise", "diff_walking": "Difficulty walking", "stroke": "Stroke",
                 "high_blood_pressure": "High blood pressure", "high_cholesterol": "High cholesterol",
                 "diabetes": "Diabetes", "asthma": "Asthma", "kidney_disease": "Kidney disease", "copd": "COPD",
