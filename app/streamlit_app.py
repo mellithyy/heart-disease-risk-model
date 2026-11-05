@@ -256,7 +256,7 @@ with tab2:
         rule = alt.Chart(pd.DataFrame({"x": [1]})).mark_rule(color=MUTED, strokeDash=[4, 3]).encode(x="x:Q")
         st.altair_chart((bars + rule).properties(height=alt.Step(34)), width="stretch")
         st.caption("Median over 2011-2025 of Mantel-Haenszel odds ratios: each year, people of the same "
-                   "age group and sex are compared.")
+                   "age group and gender are compared.")
     with c2:
         st.markdown("##### By state, age-adjusted, 2021-2025")
         d = pd.DataFrame(trends["state_tiles"])

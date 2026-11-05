@@ -6,7 +6,7 @@ A heart disease risk model and analysis built on **15 yearly CDC surveys (2011-2
 
 **[Try the live app](https://heart-disease-risk-mellithyy.streamlit.app)** · [Key results](#key-results) · [What 15 years show](#what-15-years-of-data-show) · [The 2022 audit](#part-1-auditing-my-2022-version) · [Reproduce](#reproduce)
 
-![The app: answers on the left, the estimated probability compared with people of the same age and sex, and what moves the estimate](reports/figures/app.png)
+![The app: answers on the left, the estimated probability compared with people of the same age and gender, and what moves the estimate](reports/figures/app.png)
 
 ## Key results
 
@@ -41,7 +41,7 @@ All rates below use the survey weights, so they describe US adults rather than j
 
 ![How strongly each factor goes with heart disease, year by year](reports/figures/brfss_factor_stability.png)
 
-- **The strongest links are stable across 15 years** (Mantel-Haenszel odds ratios, comparing people of the same age group and sex): stroke 4.3, COPD 3.5, kidney disease 3.1, high blood pressure 3.0, diabetes 2.6, high cholesterol 2.6, smoking 1.8, no exercise 1.75.
+- **The strongest links are stable across 15 years** (Mantel-Haenszel odds ratios, comparing people of the same age group and gender): stroke 4.3, COPD 3.5, kidney disease 3.1, high blood pressure 3.0, diabetes 2.6, high cholesterol 2.6, smoking 1.8, no exercise 1.75.
 - **Two links weakened:** high cholesterol went from 2.7 to 2.2 and high blood pressure from 3.0 to 2.7. One possible reason is wider treatment (statins, blood pressure medicine); the survey cannot prove it.
 
 ![Heart disease by state, age-adjusted, 2021-2025](reports/figures/brfss_states.png)
@@ -71,7 +71,7 @@ Result: **6,705,004 adults x 31 columns** (6,640,287 with a known heart disease 
 ## The model
 
 - **Time-based evaluation, as in real use.** Blood pressure and cholesterol are asked in odd years, so the model uses odd years: trained on 2011-2021 (2.72 million answers), tuned on 2023, retrained on 2011-2023 (3.15 million), then **tested once on 2025**.
-- **22 answers as inputs:** age, sex, race, BMI, general health, poor physical and mental health days, difficulty walking, smoking, heavy drinking, exercise, blood pressure, cholesterol, diabetes, stroke, kidney disease, COPD, asthma, arthritis, depression, income, education.
+- **22 answers as inputs:** age, gender, race, BMI, general health, poor physical and mental health days, difficulty walking, smoking, heavy drinking, exercise, blood pressure, cholesterol, diabetes, stroke, kidney disease, COPD, asthma, arthritis, depression, income, education.
 - **Left out on purpose:** medication questions and "last check-up". People are given medicine and see doctors more *because* they have heart disease, so these answers leak the diagnosis instead of measuring risk.
 - **No resampling.** The imbalance (9% positives) is handled by choosing the decision threshold on the 2023 predictions, which keeps the probabilities calibrated.
 - **Tuning barely mattered:** four gradient-boosting settings scored PR-AUC 0.362-0.363 on 2023. Better information mattered more: removing blood pressure and cholesterol costs 0.015 PR-AUC on 2025.
