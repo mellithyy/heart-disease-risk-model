@@ -1,6 +1,6 @@
 # Heart Risk Model: 15 Years of CDC Survey Data
 
-**Portfolio page:** [mellithyy.github.io/work/heart](https://mellithyy.github.io/work/heart)
+**Portfolio page:** [mohamedellithy.com/work/heart](https://mohamedellithy.com/work/heart)
 
 A heart disease risk model and analysis built on **15 yearly CDC surveys (2011-2025, 6.7 million US adults)**, harmonised into one dataset. The model is trained on 2011-2023 and tested once on 2025, a year it never saw. It started as an audit of my 2022 version of this project, whose headline results came from a data leak.
 
