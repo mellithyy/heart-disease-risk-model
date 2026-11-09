@@ -13,6 +13,8 @@
     const q = new URLSearchParams(location.search).get("lang");
     if (q === "ar" || q === "en") return q;
     try { const s = localStorage.getItem("heart.lang"); if (s === "ar" || s === "en") return s; } catch (e) { /* no storage */ }
+    // (a visitor coming from the Arabic pages of the site opens it in Arabic: their links carry no language of their own)
+    try { const r = new URL(document.referrer); if (r.hostname === location.hostname && /^\/ar\//.test(r.pathname)) return "ar"; } catch (e) { /* no referrer */ }
     return "en";
   })();
   const fill = (s, a) => String(s).replace(/\{(\d)\}/g, (_, i) => a[+i]);
