@@ -4,7 +4,7 @@
 
 A heart disease risk model and analysis built on **15 yearly CDC surveys (2011-2025, 6.7 million US adults)**, harmonised into one dataset. The model is trained on 2011-2023 and tested once on 2025, a year it never saw. It started as an audit of my 2022 version of this project, whose headline results came from a data leak.
 
-**[Try the live app](https://heart-disease-risk-mellithyy.streamlit.app)** · [Key results](#key-results) · [What 15 years show](#what-15-years-of-data-show) · [The 2022 audit](#part-1-auditing-my-2022-version) · [Reproduce](#reproduce)
+**[Try the live app](https://mohamedellithy.com/heart-app/)** · [Key results](#key-results) · [What 15 years show](#what-15-years-of-data-show) · [The 2022 audit](#part-1-auditing-my-2022-version) · [Reproduce](#reproduce)
 
 ![The app: answers on the left, the estimated probability compared with people of the same age and gender, and what moves the estimate](reports/figures/app.png)
 
@@ -142,14 +142,18 @@ Other 2022 issues fixed: duplicate rows were dropped (in a Yes/No survey, differ
 
 ## The app
 
-**Live: [heart-disease-risk-mellithyy.streamlit.app](https://heart-disease-risk-mellithyy.streamlit.app)** (Streamlit Community Cloud; it may take half a minute to wake up if nobody has used it for a while).
+**Live: [mohamedellithy.com/heart-app](https://mohamedellithy.com/heart-app/)**, in English and Arabic.
 
-A [Streamlit](https://streamlit.io) app ([`app/streamlit_app.py`](app/streamlit_app.py)) with three tabs:
-- **Your estimate:** 22 questions (race, education and income can be skipped), the estimated probability on a scale next to the average for your age and sex, a note when it passes the screening cut-off, and what moves the estimate.
-- **15 years of data:** interactive versions of the trend, risk-factor, factor-strength and state charts.
+A web page with no server: the saved model runs in the visitor's browser, so nothing a visitor enters leaves the page.
+[`web/model_export.py`](web/model_export.py) writes the model's 301 trees and its encoders as plain numbers,
+[`web/build_web.py`](web/build_web.py) puts them into one page with the small result files, and [`web/parity.cjs`](web/parity.cjs)
+checks that the page gives the same probability as scikit-learn on 20,000 random answers (largest difference 2.2e-16). Three tabs:
+- **Your estimate:** 22 questions (race, education and income can be skipped), the estimated probability on a dial and as 100 dots next to the average for your age and gender, a note when it passes the screening cut-off, the conditions you named shown on a body, and what moves the estimate.
+- **15 years of data:** the trend, risk-factor, factor-strength and state charts.
 - **How the model works:** the 2025 test results, calibration, importance, method and limits.
 
-It needs only the saved model and small JSON reports, not the 6.7-million-row dataset.
+The first version, a [Streamlit](https://streamlit.io) app ([`app/streamlit_app.py`](app/streamlit_app.py)), still runs at
+[heart-disease-risk-mellithyy.streamlit.app](https://heart-disease-risk-mellithyy.streamlit.app) (it may take half a minute to wake up).
 
 ## Reproduce
 
@@ -173,6 +177,7 @@ python -m heart_risk.audit2022.leakage_audit
 cd ..
 
 pytest                                     # harmonisation rules, data and saved models
+python web/build_web.py && node web/parity.cjs   # the web page, and its model checked against scikit-learn
 streamlit run app/streamlit_app.py
 ```
 
@@ -181,7 +186,8 @@ Versions are pinned: a saved model must be loaded with the scikit-learn version 
 ## Project structure
 
 ```
-app/streamlit_app.py            the app
+web/                            the app as a web page (model export, page build, parity check)
+app/streamlit_app.py            the first app (Streamlit)
 src/heart_risk/
     brfss/                      Part 2: CDC 2011-2025
         download.py             yearly files from cdc.gov

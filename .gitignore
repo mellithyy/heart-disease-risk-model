@@ -7,3 +7,7 @@ __pycache__/
 data/raw/
 data/interim/
 data/processed/
+
+# the web page build: made by web/build_web.py (model export, parity cases, the page and its fonts)
+web/build/
+web/dist/
