@@ -4,8 +4,8 @@
     node web/parity.cjs            -> the page's model against scikit-learn on 20,000 random answers
 
 The page holds: the model's 301 trees (model_export.py), the small report files the Streamlit app reads (metadata, test results,
-15-year trends) and the English and Arabic texts (i18n.json). Fonts are served beside it (Switzer: ITF Free Font License,
-Beiruti: SIL OFL; their licences travel with them). The site's own files (icons, sharing picture, visit counter) are linked by
+15-year trends) and its texts (i18n.json; English only: the data is a US survey). The font is served beside it (Switzer: ITF
+Free Font License, its licence travels with it). The site's own files (icons, sharing picture, visit counter) are linked by
 their address on the site. A Content-Security-Policy in the page allows only its own scripts (by their hashes) and the counter.
 """
 import base64
@@ -102,8 +102,7 @@ def build():
     html = page(model, data())
     assert not re.search(r"\bNaN\b|Infinity", html.split('id="app-data">')[1].split("</script>")[0])
     (dist / "index.html").write_text(html, encoding="utf-8", newline="\n")
-    for src, name in [(FONTS / "switzer" / "Switzer-Variable.woff2", "Switzer-Variable.woff2"), (FONTS / "switzer" / "LICENSE-FFL.txt", "LICENSE-Switzer-FFL.txt"),
-                      (FONTS / "Beiruti-arabic.woff2", "Beiruti-arabic.woff2"), (FONTS / "OFL-Beiruti.txt", "OFL-Beiruti.txt")]:
+    for src, name in [(FONTS / "switzer" / "Switzer-Variable.woff2", "Switzer-Variable.woff2"), (FONTS / "switzer" / "LICENSE-FFL.txt", "LICENSE-Switzer-FFL.txt")]:
         shutil.copy2(src, dist / "fonts" / name)
     size = (dist / "index.html").stat().st_size
     print(f"web/dist/index.html {size / 1e6:.2f} MB, {len(model['trees'])} trees; fonts copied; run node web/parity.cjs to check the model")

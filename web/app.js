@@ -1,4 +1,4 @@
-// The heart risk app: the answers, the estimate and its charts, in English or Arabic. Everything runs here, in the page: the
+// The heart risk app: the answers, the estimate and its charts. English only: the data is a US survey. Everything runs here, in the page: the
 // model (predict.js, the saved scikit-learn model as numbers) and the report files are written into the page by build_web.py.
 (function () {
   "use strict";
@@ -8,25 +8,15 @@
   const SKIP = "__skip", NS = "http://www.w3.org/2000/svg";
   const REDUCE = matchMedia("(prefers-reduced-motion: reduce)");
 
-  // ---- language
-  let L = (() => {
-    const q = new URLSearchParams(location.search).get("lang");
-    if (q === "ar" || q === "en") return q;
-    try { const s = localStorage.getItem("heart.lang"); if (s === "ar" || s === "en") return s; } catch (e) { /* no storage */ }
-    // (a visitor coming from the Arabic pages of the site opens it in Arabic: their links carry no language of their own)
-    try { const r = new URL(document.referrer); if (r.hostname === location.hostname && /^\/ar\//.test(r.pathname)) return "ar"; } catch (e) { /* no referrer */ }
-    return "en";
-  })();
+  // ---- the texts (web/i18n.json)
+  const TE = TX.en;
   const fill = (s, a) => String(s).replace(/\{(\d)\}/g, (_, i) => a[+i]);
-  const t = (k, ...a) => fill(TX[L][k] !== undefined ? TX[L][k] : TX.en[k], a);
-  const ans = v => (TX[L].a[v] !== undefined ? TX[L].a[v] : v);
+  const t = (k, ...a) => fill(TE[k], a);
+  const ans = v => (TE.a[v] !== undefined ? TE.a[v] : v);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
-  // (inside an Arabic sentence a number or a range is kept left to right: "60-64", "13.0%", "-1.2", not "64-60" or "1.2-")
-  const iso = s => (L === "ar" ? "\u2066" + s + "\u2069" : String(s));
-  const pct = (v, d) => iso((100 * v).toFixed(d) + "%");
-  const num = v => iso(v.toLocaleString("en-US"));
-  const age = v => (TX[L].a[v] !== undefined ? TX[L].a[v] : iso(v));
-  const rtl = () => L === "ar";
+  const pct = (v, d) => (100 * v).toFixed(d) + "%";
+  const num = v => v.toLocaleString("en-US");
+  const age = v => ans(v);
 
   // ---- the answers (the Streamlit app's starting answers)
   const START = {
@@ -131,7 +121,7 @@
 
   // ---- the page
   const $ = (s, el) => (el || document).querySelector(s);
-  const home = () => SITE + (rtl() ? "ar/" : "");
+  const home = () => SITE;
   function opts(list, cur, label, withSkip) {
     return (withSkip ? [SKIP] : []).concat(list).map(v => `<option value="${esc(v)}"${v === cur ? " selected" : ""}>${esc(v === SKIP ? t("skip") : (label ? label(v) : ans(v)))}</option>`).join("");
   }
@@ -141,17 +131,12 @@
   const seg = (k, lab, list, cls) => `<div class="field${cls ? " " + cls : ""}"><span class="lab" id="l-${k}">${t(lab)}</span><div class="seg${cls === "full" ? " wide" : ""}" role="group" aria-labelledby="l-${k}">${btns(k, list)}</div></div>`;
   const chips = (k, lab, list, label) => `<div class="field full"><span class="lab" id="l-${k}">${t(lab)}</span><div class="chips" role="group" aria-labelledby="l-${k}">${btns(k, list, label)}</div></div>`;
   const yn = (k, lab, hint) => `<div class="yn"><span class="yn-t"><span class="lab" id="l-${k}">${t(lab)}</span>${hint ? `<span class="hint">${t(hint)}</span>` : ""}</span><div class="seg" role="group" aria-labelledby="l-${k}">${btns(k, ["No", "Yes"])}</div></div>`;
-  const dayWord = n => {
-    if (L !== "ar") return t(n === 1 ? "d_1" : "d_n", n);
-    return n === 0 ? t("d_0", n) : n === 1 ? t("d_1") : n === 2 ? t("d_2") : n <= 10 ? t("d_few", n) : t("d_n", n);
-  };
+  const dayWord = n => t(n === 1 ? "d_1" : "d_n", n);
   const days = (k, lab) => `<div class="field"><label class="lab" for="f-${k}">${t(lab)}</label><div class="range"><div class="rg"><input type="range" id="f-${k}" data-k="${k}" min="0" max="30" step="1" value="${S[k]}"><div class="scale-ends" aria-hidden="true"><span>0</span><span>30</span></div></div><output id="o-${k}" for="f-${k}">${dayWord(S[k])}</output></div></div>`;
   const diabLabel = v => (v === "Borderline" ? ans("Borderline diabetes") : ans(v));
   const qcard = (id, icon, title, sub, n, body) => `<section class="qcard" aria-labelledby="g-${id}"><div class="qhead"><span class="qico">${ic(icon)}</span><div><h3 id="g-${id}">${t(title)}</h3><p>${t(sub)}</p></div><span class="count">${ic("check")}${t("q_count", n)}</span></div>${body}</section>`;
 
   function render() {
-    const de = document.documentElement;
-    de.lang = L; de.dir = rtl() ? "rtl" : "ltr";
     document.title = t("page_title");
     $('meta[name="description"]').setAttribute("content", t("page_desc"));
     const A = M.answers, gb = R.results.gradient_boosting.best_f1;
@@ -173,7 +158,6 @@ ${ICONS}
   <nav class="nav" aria-label="${t("nav_label")}">
     <a href="${home()}work/heart">${t("nav_project")}</a>
     <a class="gh" href="${REPO}">${t("nav_code")}</a>
-    <button class="lang" type="button" id="lang" lang="${rtl() ? "en" : "ar"}">${t("nav_lang")}</button>
   </nav>
 </div></header>
 <section class="hero" aria-labelledby="title">
@@ -272,19 +256,18 @@ ${ICONS}
     const all = M.weighted_rate_2021_2025, cut = M.thresholds.gradient_boosting.screening_recall_80, sr = R.results.gradient_boosting.screening_recall_80;
     const top = Math.min(1, Math.max(0.25, risk, peer) * 1.3);
     const ratio = peer ? risk / peer : NaN;
-    const cmp = ratio > 1.15 ? t("cmp_times", iso(ratio.toFixed(1))) : ratio >= 0.85 ? t("cmp_same") : t("cmp_below");
+    const cmp = ratio > 1.15 ? t("cmp_times", (ratio.toFixed(1))) : ratio >= 0.85 ? t("cmp_same") : t("cmp_below");
     const shown = risk < 0.1 ? pct(risk, 1) : pct(risk, 0), group = t("grp_" + S.sex, age(S.age_group));
     $("#res-for").textContent = t("for_" + S.sex, age(S.age_group));
     $("#verdict").innerHTML = `<p>${t("res_1", `<b>${shown}</b>`)}</p><p>${t("res_2", cmp, group, pct(peer, 1))}</p>`;
     const n = Math.round(100 * risk);
     document.querySelectorAll("#dots i").forEach((d, i) => d.classList.toggle("on", i < n));
-    $("#dots-t").innerHTML = n < 1 ? t("dots_lt") : t("dots_n", iso(n));
+    $("#dots-t").innerHTML = n < 1 ? t("dots_lt") : t("dots_n", (n));
     const up = risk >= cut;
     $("#screen").className = "screen" + (up ? " up" : "");
     $("#screen").innerHTML = `${ic(up ? "flag" : "check")}<div><h3>${t(up ? "scr_up_t" : "scr_lo_t", pct(cut, 0))}</h3><p>${up ? t("scr_up_p", pct(sr.recall, 0), pct(sr.precision, 0)) : t("scr_lo_p", pct(sr.recall, 0))}</p></div>`;
     $("#mini-v").textContent = shown;
-    // (on the dial a line holds words or a number, never both: in Arabic "80 or older" is written 80+ there)
-    gauge({risk, peer, all, cut, top, shown, peerLab: t("lab_" + S.sex, L === "ar" && S.age_group === "80 or older" ? iso("80+") : age(S.age_group))});
+    gauge({risk, peer, all, cut, top, shown, peerLab: t("lab_" + S.sex, age(S.age_group))});
     moves(p, risk);
     bodyMap();
   }
@@ -300,24 +283,20 @@ ${ICONS}
     const svg = $("#gauge"), box = $("#gauge-box");
     if (!svg) return;
     while (svg.firstChild) svg.removeChild(svg.firstChild);
-    const {W, CX, CY, R: RR} = G, ar = rtl(), top = a.top;
+    const {W, CX, CY, R: RR} = G, top = a.top;
     const compact = box.clientWidth < 400;
     gaugeCompact = compact;
-    const ang = v => Math.PI * (ar ? Math.min(v / top, 1) : 1 - Math.min(v / top, 1));
+    const ang = v => Math.PI * (1 - Math.min(v / top, 1));
     const pt = (an, r) => [CX + r * Math.cos(an), CY - r * Math.sin(an)];
     const arc = (v0, v1, r) => { const p0 = pt(ang(v0), r), p1 = pt(ang(v1), r);
-      return `M${p0[0].toFixed(2)} ${p0[1].toFixed(2)} A${r} ${r} 0 0 ${ar ? 0 : 1} ${p1[0].toFixed(2)} ${p1[1].toFixed(2)}`; };
+      return `M${p0[0].toFixed(2)} ${p0[1].toFixed(2)} A${r} ${r} 0 0 1 ${p1[0].toFixed(2)} ${p1[1].toFixed(2)}`; };
     const el = (tag, at, parent) => { const n = document.createElementNS(NS, tag); for (const k in at) n.setAttribute(k, at[k]); (parent || svg).appendChild(n); return n; };
-    // side: which edge of the text sits on x ("l" its left edge, "r" its right edge, "m" its middle). Every line of the dial
-    // is either words or a number, never both, and is laid out left to right: Safari breaks right-to-left SVG lines that hold
-    // numbers, so no browser is left to reorder anything (a line of Arabic words still reads right to left inside itself).
-    const AR = /[\u0600-\u06FF]/, mixed = s => AR.test(s) && /\d/.test(s);
-    // (one text element per line: Safari spreads one line's Arabic letters over the next line's position otherwise)
+    // side: which edge of the text sits on x ("l" its left edge, "r" its right edge, "m" its middle); one text element per line
     const text = (lines, x, y, side, cls, lh) => {
       const g = el("g", {class: "lbl" + (cls ? " " + cls : "")});
       lines.forEach(([s, c], i) => {
         const te = el("text", {x: x.toFixed(1), y: (y + i * (lh || 17)).toFixed(1), "text-anchor": side === "m" ? "middle" : side === "l" ? "start" : "end", direction: "ltr", class: c}, g);
-        te.textContent = AR.test(s) ? s : s.replace(/[\u2066-\u2069]/g, "");
+        te.textContent = s;
       });
       return g;
     };
@@ -371,7 +350,7 @@ ${ICONS}
       for (const r of [RR - 50, RR - 58, RR - 66, RR - 74]) {
         for (const s of [0, 4, -4, 8, -8, 12, -12]) {
           const an = Math.min(Math.PI - 0.06, Math.max(0.06, ac + s * Math.PI / 180)), p = pt(an, r);
-          const te = text([[t("g_cut"), "g-scale"], [pct(a.cut, 0), "g-scale g-cutv"]], p[0], p[1] - 3, sideIn(an), "", ar ? 19 : 15);
+          const te = text([[t("g_cut"), "g-scale"], [pct(a.cut, 0), "g-scale g-cutv"]], p[0], p[1] - 3, sideIn(an), "", 15);
           const b = bb(te, 2);
           if (far(b) < RR - 33 && !inner.some(q => hit(b, q)) && b.x0 > 2 && b.x1 < W - 2) { inner.push(b); placed = true; break; }
           te.remove();
@@ -379,7 +358,7 @@ ${ICONS}
         if (placed) break;
       }
       for (const v of maj) {
-        const an = ang(v / 100), p = pt(an, RR - 46), te = text([[iso(v + "%"), "g-scale"]], p[0], p[1] + 4, sideIn(an));
+        const an = ang(v / 100), p = pt(an, RR - 46), te = text([[(v + "%"), "g-scale"]], p[0], p[1] + 4, sideIn(an));
         const b = bb(te, 2);
         if (inner.some(q => hit(b, q)) || far(b) > RR - 33) te.remove(); else inner.push(b);
       }
@@ -399,8 +378,7 @@ ${ICONS}
         return [w.slice(0, k).join(" "), w.slice(k).join(" ")]; };
       const C = outs.map(m => {
         const list = [], a0 = ang(m.v), d0 = pt(a0, m.r0), sp = split(m.lines[0][0]);
-        const forms = [{lines: m.lines, extra: 0}].concat(sp ? [{lines: [[sp[0], m.lines[0][1]], [sp[1], m.lines[0][1]], m.lines[1]], extra: 4}] : [])
-          .filter(f => !f.lines.some(l => mixed(l[0])));
+        const forms = [{lines: m.lines, extra: 0}].concat(sp ? [{lines: [[sp[0], m.lines[0][1]], [sp[1], m.lines[0][1]], m.lines[1]], extra: 4}] : []);
         for (const f of forms) {
         const te = text(f.lines, 0, 0, "l", "g-ext"), r = te.getBBox(); te.remove();
         const box = (x, y, side) => { const x0 = side === "l" ? x : side === "r" ? x - r.width : x - r.width / 2;
@@ -483,7 +461,7 @@ ${ICONS}
     $("#mv-key").hidden = !ch.length;
     if (!ch.length) { el.innerHTML = `<li class="none">${t("mv_none")}</li>`; $("#mv-note").textContent = t("mv_foot"); return; }
     const rows = ch.map(([lab, c]) => { const nw = predict(Object.assign({}, p, c)), pts = Math.round(1000 * (nw - risk)) / 10;
-      const s = iso((pts > 0 ? "+" : pts < 0 ? "\u2212" : "") + Math.abs(pts).toFixed(1));
+      const s = ((pts > 0 ? "+" : pts < 0 ? "\u2212" : "") + Math.abs(pts).toFixed(1));
       return {lab, v: pts, s, tip: t("mv_tip", lab, pct(nw, 1), s)}; }).sort((a, b) => a.v - b.v);
     const mx = Math.max(1, ...rows.map(r => Math.abs(r.v)));
     el.innerHTML = rows.map(r => { const w = r.v ? Math.max(2, 100 * Math.abs(r.v) / mx).toFixed(1) : 0, bar = `<i style="inline-size:${w}%"></i>`;
@@ -507,13 +485,13 @@ ${ICONS}
     if (S.diff_walking) why.legs.push(t("b_walk"));
     const lit = AREAS.filter(a => why[a].length), off = AREAS.filter(a => !why[a].length);
     document.querySelectorAll("#bodyfig [data-area]").forEach(g => g.classList.toggle("lit", why[g.dataset.area].length > 0));
-    const list = xs => (xs.length < 2 ? xs.join("") : L === "ar" ? xs.join(" و") : xs.slice(0, -1).join(", ") + " and " + xs[xs.length - 1]);
-    $("#bd-n").textContent = t("bd_n", iso(lit.length));
+    const list = xs => (xs.length < 2 ? xs.join("") : xs.slice(0, -1).join(", ") + " and " + xs[xs.length - 1]);
+    $("#bd-n").textContent = t("bd_n", (lit.length));
     $("#bd-n").classList.toggle("on", lit.length > 0);
     $("#bodyfig").setAttribute("aria-label", lit.length ? t("bd_aria", list(lit.map(a => t("a_" + a)))) : t("bd_aria_none"));
     $("#bd-list").innerHTML = lit.length
-      ? `<ul class="lit">${lit.map(a => `<li><span class="dot"></span><span><b>${t("a_" + a)}</b><span>${why[a].join(L === "ar" ? "، " : ", ")}</span></span></li>`).join("")}</ul>`
-        + (off.length ? `<p class="off">${t("bd_off", list(off.map(a => L === "ar" ? t("a_" + a) : t("a_" + a).toLowerCase())))}</p>` : "")
+      ? `<ul class="lit">${lit.map(a => `<li><span class="dot"></span><span><b>${t("a_" + a)}</b><span>${why[a].join(", ")}</span></span></li>`).join("")}</ul>`
+        + (off.length ? `<p class="off">${t("bd_off", list(off.map(a => t("a_" + a).toLowerCase())))}</p>` : "")
       : `<p class="off none">${t("bd_none")}</p>`;
   }
 
@@ -521,9 +499,9 @@ ${ICONS}
   let ecgW = 0;
   function ecgPath() {
     const svg = $("#ecg"), trace = $("#trace");
-    const sr = svg.getBoundingClientRect(), w = sr.width, h = sr.height, b = h * 0.62, ar = rtl();
+    const sr = svg.getBoundingClientRect(), w = sr.width, h = sr.height, b = h * 0.62;
     const beat = Math.max(170, Math.min(230, w / 7.5)), k = beat / 200, amp = h / 120;
-    const P = (x, y) => `${(ar ? w - x : x).toFixed(1)} ${y.toFixed(1)}`;
+    const P = (x, y) => `${x.toFixed(1)} ${y.toFixed(1)}`;
     let x = 26 * k, d = `M${P(0, b)} L${P(x, b)}`;
     while (x < w + beat) {
       const x0 = x;
@@ -553,7 +531,7 @@ ${ICONS}
       const q = trace.getPointAtLength(at);
       head.setAttribute("cx", q.x); head.setAttribute("cy", q.y); halo.setAttribute("cx", q.x); halo.setAttribute("cy", q.y);
       const hb = heart.getBoundingClientRect(), sb = svg.getBoundingClientRect(), x = q.x + sb.left;
-      if (!lit && (rtl() ? x < hb.right - hb.width * 0.25 : x > hb.left + hb.width * 0.25)) { lit = true; heart.classList.remove("pre"); heart.classList.add("go"); }
+      if (!lit && (x > hb.left + hb.width * 0.25)) { lit = true; heart.classList.remove("pre"); heart.classList.add("go"); }
       if (p < 1) requestAnimationFrame(frame);
       else { head.classList.add("gone"); halo.classList.add("gone"); heart.classList.remove("pre"); }
     };
@@ -573,7 +551,7 @@ ${ICONS}
         {h: 130, w: innerWidth > 980 ? 380 : innerWidth > 640 ? 440 : 900, yFmt: v => pct(v, 0), xTicks: [2011, 2015, 2019, 2023], tipFmt: v => pct(v, 1), dots: 2.4, yTicks: 3})}</div></div>`; }).join("");
     const odds = Object.keys(TR.odds_ratios).map(k => { const v = Object.values(TR.odds_ratios[k]).slice().sort((a, b) => a - b), n = v.length;
       const med = n % 2 ? v[(n - 1) / 2] : (v[n / 2 - 1] + v[n / 2]) / 2;
-      return {label: t("odd_" + k), v: med, color: "var(--ink)", tip: `${t("odd_" + k)}: ${iso(med.toFixed(2))}`}; }).sort((a, b) => b.v - a.v);
+      return {label: t("odd_" + k), v: med, color: "var(--ink)", tip: `${t("odd_" + k)}: ${(med.toFixed(2))}`}; }).sort((a, b) => b.v - a.v);
     return `
       <section class="card blk"><div class="blk-h"><span class="qico">${ic("trend")}</span><h2>${t("y_trend")}</h2></div>
         <div class="key"><span><i style="background:var(--ink)"></i>${t("s_crude")}</span><span><i style="background:var(--red)"></i>${t("s_adj")}</span></div>
@@ -594,9 +572,9 @@ ${ICONS}
       return `<tr${k === "gradient_boosting" ? ' class="us"' : ""}><th scope="row">${t(l)}</th>${cols.map(([c, h]) => `<td data-l="${esc(h)}">${r[c].toFixed(3)}</td>`).join("")}</tr>`; }).join("");
     const cal = R.calibration, calS = [["gradient_boosting", "cal_gb", "var(--red)"], ["logistic_regression", "cal_lr", "var(--blue)"]].map(([k, l, c]) =>
       ({name: t(l), color: c, pts: cal[k].predicted.map((p, i) => [p, cal[k].observed[i]])}));
-    const imp = Object.entries(R.permutation_importance).slice(0, 12).map(([k, v]) => ({label: TX[L].feat[k] || k, v, color: "var(--ink)", tip: `${TX[L].feat[k] || k}: ${iso(v.toFixed(3))}`}));
+    const imp = Object.entries(R.permutation_importance).slice(0, 12).map(([k, v]) => ({label: TE.feat[k] || k, v, color: "var(--ink)", tip: `${TE.feat[k] || k}: ${(v.toFixed(3))}`}));
     const gb = R.results.gradient_boosting.best_f1, nb = R.results.gb_without_bp_chol.best_f1;
-    const lims = TX[L].lim.map((s, i) => `<li>${i === 1 ? fill(s, [gb.pr_auc.toFixed(3), nb.pr_auc.toFixed(3)]) : s}</li>`).join("");
+    const lims = TE.lim.map((s, i) => `<li>${i === 1 ? fill(s, [gb.pr_auc.toFixed(3), nb.pr_auc.toFixed(3)]) : s}</li>`).join("");
     return `
       <section class="card blk"><div class="blk-h"><span class="qico">${ic("clip")}</span><h2>${t("m_test")}</h2></div>
         <table class="tbl"><thead><tr><th scope="col">${t("col_model")}</th>${cols.map(([, h]) => `<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>
@@ -610,9 +588,8 @@ ${ICONS}
       <section class="card blk"><div class="blk-h"><span class="qico">${ic("info")}</span><h2>${t("m_method")}</h2></div><ul class="lims">${lims}</ul></section>`;
   }
 
-  // ---- charts (SVG; in Arabic they read from the right, as the page does. Their text takes the page's direction, so in Arabic
-  // 'end' puts a label's left edge on its point and 'start' its right edge: the same anchors serve both languages)
-  // bars as plain HTML (readable at any width; in Arabic the page's direction turns them round): a label, then the bar on its track
+  // ---- charts (SVG lines and tiles; bars in HTML)
+  // bars as plain HTML (readable at any width): a label, then the bar on its track
   function hbars(rows, o) {
     const vals = rows.map(r => r.v).concat(o.ref !== undefined ? [o.ref] : []);
     let lo = Math.min(o.min !== undefined ? o.min : 0, ...vals), hi = Math.max(0, ...vals);
@@ -632,15 +609,15 @@ ${ICONS}
 
   function lineChart(series, o) {
     // (about as wide as its card, so the text keeps its size on a phone)
-    const W = Math.min(o.w || 900, Math.max(290, innerWidth - 72)), H = o.h || 260, ml = o.yLabel ? 74 : 56, mr = 18, mt = 12, mb = o.xLabel ? 46 : 28, ar = rtl();
+    const W = Math.min(o.w || 900, Math.max(290, innerWidth - 72)), H = o.h || 260, ml = o.yLabel ? 74 : 56, mr = 18, mt = 12, mb = o.xLabel ? 46 : 28;
     const xs = series.flatMap(s => s.pts.map(p => p[0])), ys = series.flatMap(s => s.pts.map(p => p[1]));
     const xa = o.x0 !== undefined ? o.x0 : Math.min(...xs), xb = o.x1 !== undefined ? o.x1 : Math.max(...xs);
     let ya = o.y0 !== undefined ? o.y0 : Math.min(...ys), yb = o.y1 !== undefined ? o.y1 : Math.max(...ys);
     if (o.y0 === undefined) { const p = (yb - ya) * 0.12 || 0.01; ya -= p; yb += p; }
-    const X = v => { const x = ml + (v - xa) / (xb - xa) * (W - ml - mr); return ar ? W - x : x; }, Y = v => mt + (1 - (v - ya) / (yb - ya)) * (H - mt - mb);
+    const X = v => { const x = ml + (v - xa) / (xb - xa) * (W - ml - mr); return x; }, Y = v => mt + (1 - (v - ya) / (yb - ya)) * (H - mt - mb);
     const yt = niceTicks(ya, yb, o.yTicks || 5).filter(v => v >= ya - 1e-9 && v <= yb + 1e-9);
     let s = `<svg viewBox="0 0 ${W} ${H}" role="img" focusable="false">`;
-    s += yt.map(v => `<line class="grid" x1="${X(xa)}" x2="${X(xb)}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${ar ? W - ml + 10 : ml - 10}" y="${Y(v) + 4}" text-anchor="${ar ? "start" : "end"}" direction="ltr">${esc(o.yFmt(v))}</text>`).join("");
+    s += yt.map(v => `<line class="grid" x1="${X(xa)}" x2="${X(xb)}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${ml - 10}" y="${Y(v) + 4}" text-anchor="end" direction="ltr">${esc(o.yFmt(v))}</text>`).join("");
     (o.xTicks || []).forEach(v => { s += `<text x="${X(v)}" y="${H - mb + 20}" text-anchor="middle" direction="ltr">${esc(o.xFmt ? o.xFmt(v) : v)}</text>`; });
     if (o.diag) s += `<line class="zero" x1="${X(xa)}" y1="${Y(xa)}" x2="${X(Math.min(xb, yb))}" y2="${Y(Math.min(xb, yb))}"/>`;
     for (const se of series) {
@@ -648,12 +625,11 @@ ${ICONS}
       s += se.pts.map(p => `<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="${o.dots || 3.4}" fill="${se.color}" data-tip="${esc(se.name + ": " + (o.tipX ? o.tipX(p[0]) : p[0]) + ", " + o.tipFmt(p[1]))}"/>`).join("");
     }
     if (o.xLabel) s += `<text x="${(X(xa) + X(xb)) / 2}" y="${H - 4}" text-anchor="middle">${esc(o.xLabel)}</text>`;
-    if (o.yLabel) s += `<text transform="translate(${ar ? W - 14 : 14} ${(Y(ya) + Y(yb)) / 2}) rotate(${ar ? 90 : -90})" text-anchor="middle">${esc(o.yLabel)}</text>`;
+    if (o.yLabel) s += `<text transform="translate(14 ${(Y(ya) + Y(yb)) / 2}) rotate(-90)" text-anchor="middle">${esc(o.yLabel)}</text>`;
     return s + "</svg>";
   }
 
   function tiles(list) {
-    // (a map keeps its own left and right, in Arabic too)
     const cell = 46, cols = 1 + Math.max(...list.map(d => d.col)), rows = 1 + Math.max(...list.map(d => d.row));
     const lo = Math.min(...list.map(d => d.rate)), hi = Math.max(...list.map(d => d.rate));
     const mix = f => { const a = [237, 243, 250], b = [184, 44, 52]; return `rgb(${a.map((x, i) => Math.round(x + (b[i] - x) * f)).join(",")})`; };
@@ -685,12 +661,11 @@ ${ICONS}
     mini();
   }
   function bind() {
-    $("#lang").addEventListener("click", () => { L = rtl() ? "en" : "ar"; try { localStorage.setItem("heart.lang", L); } catch (e) { /* none */ } render(); });
     const tabs = [...document.querySelectorAll("[data-tab]")];
     tabs.forEach((b, i) => {
       b.addEventListener("click", () => showTab(b.dataset.tab));
       b.addEventListener("keydown", e => {
-        const fwd = rtl() ? "ArrowLeft" : "ArrowRight", back = rtl() ? "ArrowRight" : "ArrowLeft";
+        const fwd = "ArrowRight", back = "ArrowLeft";
         const j = e.key === fwd ? i + 1 : e.key === back ? i - 1 : e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : null;
         if (j === null) return;
         e.preventDefault(); showTab(tabs[(j + tabs.length) % tabs.length].dataset.tab, true);
