@@ -142,7 +142,7 @@ Other 2022 issues fixed: duplicate rows were dropped (in a Yes/No survey, differ
 
 ## The app
 
-**Live: [mohamedellithy.com/heart-app](https://mohamedellithy.com/heart-app/)**, in English and Arabic.
+**Live: [mohamedellithy.com/heart-app](https://mohamedellithy.com/heart-app/)**, in English (the data is a US survey).
 
 A web page with no server: the saved model runs in the visitor's browser, so nothing a visitor enters leaves the page.
 [`web/model_export.py`](web/model_export.py) writes the model's 301 trees and its encoders as plain numbers,
