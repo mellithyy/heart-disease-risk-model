@@ -2,9 +2,13 @@
 
 The pipeline is: ordinal codes for the ordered answers (age, general health, income, education), category codes for the
 yes/no and multiple-choice answers, BMI and the two day counts as they are, then scikit-learn's HistGradientBoostingClassifier
-(301 trees). In the browser the same steps run in web/app.js (predictRaw): each answer becomes its code (a skipped answer is
-missing), every tree is walked from its root to a leaf, the leaves are added to the starting value, and the sum becomes a
-probability with the logistic function, as predict_proba does.
+(301 trees). The classifier encodes once more inside: its own encoder puts the category columns first and numbers their codes
+again, and its trees read the columns in that order. export() folds both steps into one table per question (answer -> the
+number a tree sees) and lists the columns in the trees' order.
+
+In the browser web/predict.js (makePredictor) runs it: each answer becomes its number (a skipped answer is missing), every
+tree is walked from its root to a leaf, the leaves are added to the starting value, and the sum becomes a probability with
+the logistic function, as predict_proba does.
 
 export() returns that model as a JSON-ready dict; parity_cases() returns random people with scikit-learn's own probability for
 each, so the browser's numbers can be checked against them (web/parity.cjs).
